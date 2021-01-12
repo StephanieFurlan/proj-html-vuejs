@@ -4,12 +4,22 @@
   padding: 0;
 }
 
-.open-sans {
-  font-family: "Open Sans", sans-serif;
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
-.montserrat {
-  font-family: "Montserrat", sans-serif;
+button:focus,
+select:focus,
+input:focus {
+  outline: 0;
+}
+
+button {
+  border: none;
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
 }
 
 .centered {
@@ -17,6 +27,19 @@
   margin: 0 auto;
   height: 100%;
   padding: 0 15px;
+}
+
+.btn {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.btn-blue {
+  background-color: #1B5ECA;
+  color: white;
+  padding: 23px 25px;
+  border-radius: 50px;
+  letter-spacing: 1px;
 }
 
 header .header-top {
@@ -36,4 +59,28 @@ header:after {
   content: "";
   display: block;
   height: 1px;
+}
+
+main .row-main {
+  height: 600px;
+}
+main .row-main .column-left {
+  width: 65%;
+}
+main .row-main .column-left h1 {
+  font-size: 64px;
+  font-weight: 300;
+  color: #273044;
+  line-height: 64px;
+  margin-bottom: 40px;
+}
+main .row-main .column-left h3 {
+  font-size: 24px;
+  font-weight: 400;
+  margin-bottom: 40px;
+}
+
+#investing {
+  background-image: url("/../dist/images/base.png");
+  background-repeat: no-repeat;
 }

@@ -5,20 +5,42 @@
 }
 
 body {
+   font-family: 'Montserrat', sans-serif;
 
+}
+
+button:focus,
+select:focus,
+input:focus {
+  outline: 0;
+}
+
+button {
+   border: none;
 }
 
 .open-sans {
    font-family: 'Open Sans', sans-serif;
 }
 
-.montserrat {
-   font-family: 'Montserrat', sans-serif;
-}
+
 
 .centered {
    max-width: 1720px;
    margin: 0 auto;
    height: 100%;
    padding: 0 15px;
+}
+
+.btn {
+   font-size: 14px;
+   font-weight: bold;
+}
+
+.btn-blue {
+   background-color: $btnColor;
+   color: white;
+   padding: 23px 25px;
+   border-radius: 50px;
+   letter-spacing: 1px;
 }

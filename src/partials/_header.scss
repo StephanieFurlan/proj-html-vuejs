@@ -22,3 +22,30 @@ header {
 
    }
 }
+
+main {
+   .row-main {
+      height: 600px;
+
+      .column-left {
+         width: 65%;
+         h1 {
+            font-size: 64px;
+            font-weight: 300;
+            color: #273044;
+            line-height: 64px;
+            margin-bottom: 40px;
+         }
+         h3 {
+            font-size: 24px;
+            font-weight: 400;
+            margin-bottom: 40px;
+         }
+      }
+   }
+}
+
+#investing {
+   background-image: url("../dist/images/base.png");
+   background-repeat: no-repeat;
+}
