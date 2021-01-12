@@ -29,6 +29,11 @@ button {
   padding: 0 15px;
 }
 
+.centered-70 {
+  width: 70%;
+  margin: 0 auto;
+}
+
 .btn {
   font-size: 14px;
   font-weight: bold;
@@ -61,26 +66,46 @@ header:after {
   height: 1px;
 }
 
-main .row-main {
+#investing {
+  position: relative;
+}
+#investing .jumbotron-text {
+  padding-top: 100px;
+}
+#investing img {
+  position: absolute;
+  right: 10%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: -100;
+}
+
+main .jumbotron {
   height: 600px;
+  display: flex;
+  align-items: center;
 }
-main .row-main .column-left {
-  width: 65%;
+main .jumbotron .jumbotron-text {
+  width: 60%;
 }
-main .row-main .column-left h1 {
+main .jumbotron .jumbotron-text h1 {
   font-size: 64px;
   font-weight: 300;
   color: #273044;
   line-height: 64px;
   margin-bottom: 40px;
 }
-main .row-main .column-left h3 {
+main .jumbotron .jumbotron-text h3 {
   font-size: 24px;
   font-weight: 400;
   margin-bottom: 40px;
 }
 
-#investing {
-  background-image: url("/../dist/images/base.png");
+#online-course {
+  background-image: url("../dist/images/online-course.png");
   background-repeat: no-repeat;
+  background-position: top left;
+}
+#online-course h1 {
+  font-size: 50px;
 }

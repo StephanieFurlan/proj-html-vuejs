@@ -23,18 +23,37 @@ header {
    }
 }
 
-main {
-   .row-main {
-      height: 600px;
 
-      .column-left {
-         width: 65%;
+
+
+#investing {
+   position: relative;
+   .jumbotron-text {
+      padding-top: 100px;
+   }
+   img {
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -100;
+   }
+}
+
+main {
+   .jumbotron {
+      height: 600px;
+      display: flex;
+      align-items: center;
+      .jumbotron-text {
+         width: 60%;
          h1 {
             font-size: 64px;
             font-weight: 300;
             color: #273044;
             line-height: 64px;
             margin-bottom: 40px;
+
          }
          h3 {
             font-size: 24px;
@@ -45,7 +64,11 @@ main {
    }
 }
 
-#investing {
-   background-image: url("../dist/images/base.png");
+#online-course {
+   background-image: url("../dist/images/online-course.png");
    background-repeat: no-repeat;
+   background-position: top left;
+   h1 {
+      font-size: 50px;
+   }
 }
