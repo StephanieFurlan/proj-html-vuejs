@@ -1,0 +1,24 @@
+header {
+   .header-top {
+      height: 50px;
+
+      &:after {
+         background-color: #E4E8ED;;
+          content: "";
+          display: block;
+          height: 1px;
+
+      }
+   }
+
+   .header-bottom {
+      height: 70px;
+   }
+   &:after {
+      background-color: #E4E8ED;;
+       content: "";
+       display: block;
+       height: 1px;
+
+   }
+}

@@ -1,0 +1,39 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.open-sans {
+  font-family: "Open Sans", sans-serif;
+}
+
+.montserrat {
+  font-family: "Montserrat", sans-serif;
+}
+
+.centered {
+  max-width: 1720px;
+  margin: 0 auto;
+  height: 100%;
+  padding: 0 15px;
+}
+
+header .header-top {
+  height: 50px;
+}
+header .header-top:after {
+  background-color: #E4E8ED;
+  content: "";
+  display: block;
+  height: 1px;
+}
+header .header-bottom {
+  height: 70px;
+}
+header:after {
+  background-color: #E4E8ED;
+  content: "";
+  display: block;
+  height: 1px;
+}
