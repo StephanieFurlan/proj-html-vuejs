@@ -23,23 +23,6 @@ header {
    }
 }
 
-
-
-
-#investing {
-   position: relative;
-   .jumbotron-text {
-      padding-top: 100px;
-   }
-   img {
-      position: absolute;
-      right: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: -100;
-   }
-}
-
 main {
    .jumbotron {
       height: 600px;
@@ -47,6 +30,7 @@ main {
       align-items: center;
       .jumbotron-text {
          width: 60%;
+         max-width: 700px;
          h1 {
             font-size: 64px;
             font-weight: 300;
@@ -62,13 +46,136 @@ main {
          }
       }
    }
+
+
+}
+
+#investing {
+   position: relative;
+   .jumbotron-text {
+      padding-top: 100px;
+   }
+   img {
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -100;
+   }
+}
+
+.blue-card-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   padding: 50px 0;
+   .blue-card {
+      width: 32%;
+      background-color: $cardColor;
+      padding: 30px;
+      i {
+         color: $btnColor;
+      }
+      h4 {
+         margin: 30px 0;
+      }
+      p {
+         font-size: 14px;
+         color: $fontGray;
+      }
+   }
+}
+
+#img-gallery {
+   padding: 50px 0 100px 0;
+   .row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .col-2 {
+         width: calc((100% - 3 * 32%) / 2 + 2 * 32%);
+         background-color: red;
+      }
+      .col-1 {
+         width: 32%;
+         background-color: yellow;
+         height: 100px;
+         &.filled {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            .top-row {
+               width: 100%;
+               height: 50%;
+               background-color: red;
+            }
+            .bottom-row {
+               height: 50%;
+               width: 100%;
+               background-color: pink;
+            }
+         }
+      }
+
+   }
 }
 
 #online-course {
    background-image: url("../dist/images/online-course.png");
    background-repeat: no-repeat;
-   background-position: top left;
+   // background-position: top left;
+   background-position: center;
+   background-size: cover;
    h1 {
       font-size: 50px;
+   }
+}
+
+#reviews {
+   height: 600px;
+   background-image: url("../dist/images/brooke-cagle-224821-unsplash-1-1920x700.jpg");
+   background-size: cover;
+   background-repeat: no-repeat;
+   .flex-container {
+      display: flex;
+      height: 100%;
+      align-items: center;
+   }
+   .review-info {
+      padding: 80px 90px;
+      background-color: white;
+      width: 65%;
+      min-width: 700px;
+      height: 80%;
+      position: relative;
+
+      h3 {
+         font-size: 36px;
+         font-weight: 300;
+      }
+      .review-content {
+         font-size: 18px;
+         margin: 20px 0;
+         font-weight: 200;
+         line-height: 30px;
+      }
+      h2 {
+         font-size: 18px;
+      }
+      .person-info {
+         font-size: 14px;
+         font-weight: 300;
+      }
+      .triangle-right {
+         position: absolute;
+         right: -15px;
+         top: 50%;
+         transform: translateY(-50%);
+         width: 0;
+         height: 0;
+         border-top: 10px solid transparent;
+         border-left: 15px solid WHITE;
+         border-bottom: 10px solid transparent;
+    }
    }
 }
