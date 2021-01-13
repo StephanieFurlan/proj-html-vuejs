@@ -14,7 +14,8 @@ input:focus {
   outline: 0;
 }
 
-button {
+button,
+input {
   border: none;
 }
 
@@ -36,17 +37,24 @@ button {
   max-width: 1200px;
 }
 
-.btn {
+.btn-blue {
   font-size: 14px;
   font-weight: bold;
+  color: white;
+  letter-spacing: 1px;
+  background-color: #1B5ECA;
 }
 
-.btn-blue {
-  background-color: #1B5ECA;
-  color: white;
-  padding: 23px 25px;
+.btn-rounded {
   border-radius: 50px;
-  letter-spacing: 1px;
+  padding: 23px 25px;
+}
+
+.title-box {
+  text-align: center;
+  padding-top: 60px;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .title-1 {
@@ -61,12 +69,27 @@ button {
 
 .title-3 {
   font-size: 36px;
-  font-weight: 400;
+  font-weight: 300;
 }
 
 .title-4 {
   font-size: 24px;
   font-weight: 400;
+}
+
+.title {
+  margin-bottom: 20px;
+}
+
+.paragraph-1 {
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+}
+
+.flex {
+  display: flex;
+  height: 100%;
 }
 
 header .header-top {
@@ -136,45 +159,9 @@ main .jumbotron .jumbotron-text h3 {
 .blue-card-container .blue-card i {
   color: #1B5ECA;
 }
-.blue-card-container .blue-card h4 {
-  margin: 30px 0;
-}
 .blue-card-container .blue-card p {
   font-size: 14px;
   color: #A6ACB7;
-}
-
-#img-gallery {
-  padding: 50px 0 100px 0;
-}
-#img-gallery .row {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-#img-gallery .row .col-2 {
-  width: calc((100% - 3 * 32%) / 2 + 2 * 32%);
-  background-color: red;
-}
-#img-gallery .row .col-1 {
-  width: 32%;
-  background-color: yellow;
-  height: 100px;
-}
-#img-gallery .row .col-1.filled {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-#img-gallery .row .col-1.filled .top-row {
-  width: 100%;
-  height: 50%;
-  background-color: red;
-}
-#img-gallery .row .col-1.filled .bottom-row {
-  height: 50%;
-  width: 100%;
-  background-color: pink;
 }
 
 #online-course {
@@ -202,12 +189,6 @@ main .jumbotron .jumbotron-text h3 {
   min-width: 700px;
   height: 80%;
   position: relative;
-}
-#reviews .review-info .review-content {
-  font-size: 18px;
-  margin: 20px 0;
-  font-weight: 200;
-  line-height: 30px;
 }
 #reviews .review-info h2 {
   font-size: 18px;
@@ -239,12 +220,13 @@ main .jumbotron .jumbotron-text h3 {
 #business .business-card-container .business-card {
   width: 49%;
   border: 1px solid #E4E8ED;
-  padding: 40px 20px;
+  padding: 40px 60px 40px 40px;
   display: flex;
   height: 100%;
 }
 #business .business-card-container .business-card img {
   padding-right: 30px;
+  align-self: center;
 }
 #business .business-card-container .business-card .business-card__right {
   display: flex;
@@ -255,6 +237,51 @@ main .jumbotron .jumbotron-text h3 {
 }
 #business .business-card-container .business-card p {
   font-size: 18px;
-  margin: 20px 0;
   font-weight: 200;
+}
+
+#numbers {
+  background-color: #F2F6FB;
+  height: 700px;
+  background-image: url("../dist/images/we_proud.png");
+  background-position: bottom;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#subscribe {
+  background-color: #4ED7A8;
+  padding: 50px 0;
+}
+#subscribe .centered-70 {
+  color: white;
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+#subscribe .centered-70 .col-left {
+  width: 60%;
+  padding-right: 10px;
+}
+#subscribe .centered-70 .col-right {
+  width: 40%;
+}
+#subscribe .centered-70 .col-right .title {
+  font-size: 14px;
+}
+#subscribe .centered-70 .col-right #input-container {
+  width: 100%;
+  background-color: red;
+  height: 40px;
+}
+#subscribe .centered-70 .col-right #input-container .btn-blue {
+  padding: 0 15px;
+}
+#subscribe .centered-70 .col-right #input-container input {
+  width: 100%;
+  padding: 5px;
+}
+
+#popular-courses {
+  background-color: #F2F6FB;
 }

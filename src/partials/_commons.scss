@@ -15,7 +15,8 @@ input:focus {
   outline: 0;
 }
 
-button {
+button,
+input {
    border: none;
 }
 
@@ -39,21 +40,28 @@ button {
    max-width: 1200px;
 }
 
-.btn {
+.btn-blue {
    font-size: 14px;
    font-weight: bold;
+   color: white;
+
+   letter-spacing: 1px;
+   background-color: $btnColor;
 }
 
-.btn-blue {
-   background-color: $btnColor;
-   color: white;
-   padding: 23px 25px;
+.btn-rounded {
    border-radius: 50px;
-   letter-spacing: 1px;
+   padding: 23px 25px;
 }
 
 // title - sizes
 
+.title-box {
+   text-align: center;
+   padding-top: 60px;
+   width: 40%;
+   margin: 0 auto;
+}
 
 .title-1 {
    font-size: 64px;
@@ -67,14 +75,29 @@ button {
 
 .title-3 {
    font-size: 36px;
-   font-weight: 400;
+   font-weight: 300;
 }
 .title-4 {
    font-size: 24px;
    font-weight: 400;
 }
 
+.title {
+   margin-bottom: 20px;
+}
+
+.paragraph-1 {
+   font-size: 18px;
+   font-weight: 200;
+   line-height: 30px;
+
+}
+
 @mixin flex-container {
    display: flex;
    height: 100%;
+}
+
+.flex {
+   @include flex-container;
 }
