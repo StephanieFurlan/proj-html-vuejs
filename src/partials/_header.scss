@@ -155,11 +155,35 @@ main {
 
 #numbers {
    background-color: $cardColor;
-   height: 700px;
-   background-image: url("../dist/images/we_proud.png");
-   background-position: bottom;
-   background-size: contain;
-   background-repeat: no-repeat;
+   #numbers-info {
+      height: 500px;
+      background-image: url("../dist/images/we_proud.png");
+      background-position: bottom;
+      background-size: contain;
+      background-repeat: no-repeat;
+      text-align: center;
+      ul {
+         list-style-type: none;
+         margin-top: 50px;
+         @include flex-container;
+         li {
+            width: 25%;
+            padding: 20px 0;
+            height: max-content;
+            .nmb {
+               font-size: 70px;
+               font-weight: 300;
+            }
+            .sub-nmb {
+               font-size: 20px;
+            }
+            &:not(:last-child) {
+               border-right: 1px solid #E4E8ED;;
+            }
+         }
+      }
+   }
+
 }
 
 #subscribe {
@@ -168,7 +192,6 @@ main {
    .centered-70 {
       color: white;
       @include flex-container;
-      justify-content: space-between;
       .col-left {
          width: 60%;
          padding-right: 10px;
@@ -178,10 +201,7 @@ main {
          .title {
             font-size: 14px;
          }
-
          #input-container {
-            width: 100%;
-            background-color: red;
             height: 40px;
             .btn-blue {
                padding: 0 15px;

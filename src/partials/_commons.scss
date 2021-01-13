@@ -58,9 +58,9 @@ input {
 
 .title-box {
    text-align: center;
-   padding-top: 60px;
-   width: 40%;
-   margin: 0 auto;
+   padding-top: 100px;
+   width: 60%;
+   margin: 0 auto 50px auto;
 }
 
 .title-1 {
@@ -90,7 +90,13 @@ input {
    font-size: 18px;
    font-weight: 200;
    line-height: 30px;
+}
 
+.list-inline {
+   list-style-type: none;
+   li {
+      display: inline-block;
+   }
 }
 
 @mixin flex-container {
