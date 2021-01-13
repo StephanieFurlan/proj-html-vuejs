@@ -49,6 +49,26 @@ button {
   letter-spacing: 1px;
 }
 
+.title-1 {
+  font-size: 64px;
+  font-weight: 300;
+}
+
+.title-2 {
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.title-3 {
+  font-size: 36px;
+  font-weight: 400;
+}
+
+.title-4 {
+  font-size: 24px;
+  font-weight: 400;
+}
+
 header .header-top {
   height: 50px;
 }
@@ -78,20 +98,18 @@ main .jumbotron .jumbotron-text {
   max-width: 700px;
 }
 main .jumbotron .jumbotron-text h1 {
-  font-size: 64px;
-  font-weight: 300;
   color: #273044;
-  line-height: 64px;
   margin-bottom: 40px;
 }
 main .jumbotron .jumbotron-text h3 {
-  font-size: 24px;
-  font-weight: 400;
   margin-bottom: 40px;
 }
 
 #investing {
   position: relative;
+}
+#investing h1 {
+  line-height: 64px;
 }
 #investing .jumbotron-text {
   padding-top: 100px;
@@ -165,9 +183,6 @@ main .jumbotron .jumbotron-text h3 {
   background-position: center;
   background-size: cover;
 }
-#online-course h1 {
-  font-size: 50px;
-}
 
 #reviews {
   height: 600px;
@@ -187,10 +202,6 @@ main .jumbotron .jumbotron-text h3 {
   min-width: 700px;
   height: 80%;
   position: relative;
-}
-#reviews .review-info h3 {
-  font-size: 36px;
-  font-weight: 300;
 }
 #reviews .review-info .review-content {
   font-size: 18px;
@@ -215,4 +226,35 @@ main .jumbotron .jumbotron-text h3 {
   border-top: 10px solid transparent;
   border-left: 15px solid WHITE;
   border-bottom: 10px solid transparent;
+}
+
+#business {
+  padding: 60px 50px;
+}
+#business .business-card-container {
+  display: flex;
+  height: 100%;
+  justify-content: space-between;
+}
+#business .business-card-container .business-card {
+  width: 49%;
+  border: 1px solid #E4E8ED;
+  padding: 40px 20px;
+  display: flex;
+  height: 100%;
+}
+#business .business-card-container .business-card img {
+  padding-right: 30px;
+}
+#business .business-card-container .business-card .business-card__right {
+  display: flex;
+  height: 100%;
+  margin: auto;
+  flex-direction: column;
+  align-items: flex-start;
+}
+#business .business-card-container .business-card p {
+  font-size: 18px;
+  margin: 20px 0;
+  font-weight: 200;
 }

@@ -51,3 +51,30 @@ button {
    border-radius: 50px;
    letter-spacing: 1px;
 }
+
+// title - sizes
+
+
+.title-1 {
+   font-size: 64px;
+   font-weight: 300;
+}
+
+.title-2 {
+   font-size: 50px;
+   font-weight: 300;
+}
+
+.title-3 {
+   font-size: 36px;
+   font-weight: 400;
+}
+.title-4 {
+   font-size: 24px;
+   font-weight: 400;
+}
+
+@mixin flex-container {
+   display: flex;
+   height: 100%;
+}

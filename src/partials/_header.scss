@@ -3,7 +3,7 @@ header {
       height: 50px;
 
       &:after {
-         background-color: #E4E8ED;;
+         background-color: #E4E8ED;
           content: "";
           display: block;
           height: 1px;
@@ -32,16 +32,10 @@ main {
          width: 60%;
          max-width: 700px;
          h1 {
-            font-size: 64px;
-            font-weight: 300;
             color: #273044;
-            line-height: 64px;
             margin-bottom: 40px;
-
          }
          h3 {
-            font-size: 24px;
-            font-weight: 400;
             margin-bottom: 40px;
          }
       }
@@ -52,6 +46,9 @@ main {
 
 #investing {
    position: relative;
+   h1 {
+      line-height: 64px;
+   }
    .jumbotron-text {
       padding-top: 100px;
    }
@@ -123,12 +120,8 @@ main {
 #online-course {
    background-image: url("../dist/images/online-course.png");
    background-repeat: no-repeat;
-   // background-position: top left;
    background-position: center;
    background-size: cover;
-   h1 {
-      font-size: 50px;
-   }
 }
 
 #reviews {
@@ -137,8 +130,7 @@ main {
    background-size: cover;
    background-repeat: no-repeat;
    .flex-container {
-      display: flex;
-      height: 100%;
+      @include flex-container;
       align-items: center;
    }
    .review-info {
@@ -149,10 +141,7 @@ main {
       height: 80%;
       position: relative;
 
-      h3 {
-         font-size: 36px;
-         font-weight: 300;
-      }
+
       .review-content {
          font-size: 18px;
          margin: 20px 0;
@@ -178,4 +167,37 @@ main {
          border-bottom: 10px solid transparent;
     }
    }
+}
+
+#business {
+
+   padding: 60px 50px;
+   .business-card-container {
+      @include flex-container;
+      justify-content: space-between;
+      .business-card {
+         width: 49%;
+         border: 1px solid #E4E8ED;
+         padding: 40px 20px;
+         @include flex-container;
+
+         img {
+            padding-right: 30px;
+         }
+
+         .business-card__right {
+            @include flex-container;
+            margin: auto;
+            flex-direction: column;
+            align-items: flex-start;
+         }
+         p {
+            font-size: 18px;
+            margin: 20px 0;
+            font-weight: 200;
+         }
+
+      }
+   }
+
 }
