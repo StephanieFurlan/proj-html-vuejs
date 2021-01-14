@@ -4,6 +4,36 @@ var app = new Vue({
    el: "#app",
    data: {
       languages: ["English", "Italian", "Deutsch"],
+      linkList: [
+         {
+            link: "Courses",
+            new: false
+         },
+         {
+            link: "Zoom",
+            new: true
+         },
+         {
+            link: "Pages",
+            new: false
+         },
+         {
+            link: "Bundles",
+            new: false
+         },
+         {
+            link: "Course Formats",
+            new: false
+         },
+         {
+            link: "Add Course",
+            new: true
+         },
+         {
+            link: "Demos",
+            new: false
+         },
+      ],
       courseTypes: [],
       recentCoursesList: [
          {

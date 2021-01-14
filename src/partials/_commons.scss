@@ -15,21 +15,16 @@ input:focus {
 }
 
 button,
-input {
+input,
+select {
    border: none;
 }
-
-.open-sans {
-   font-family: 'Open Sans', sans-serif;
-}
-
-
 
 .centered {
    max-width: 1720px;
    margin: 0 auto;
    height: 100%;
-   padding: 0 15px;
+   padding: 20px $space;
 }
 
 .centered-70 {
@@ -48,6 +43,7 @@ input {
    &:hover {
       background-color: #4ED7A8;
    }
+
 }
 
 .btn-rounded {

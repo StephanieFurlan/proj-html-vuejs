@@ -17,22 +17,55 @@
       <div id="app">
          <!-- HEADER -->
          <header>
-            <div class="header-top">
-               <div class="centered">
-                  <div id="languages"></div>
-                  <div id="nav-bar">
-                     <div id="nav-bar__list"></div>
-                     <div id="nav_bar__icons"></div>
+            <div class="centered flex header-top">
+               <select id="language">
+                  <option v-for="language in languages">{{ language }}</option>
+               </select>
+               <div class="header-top__right flex">
+                  <ul>
+                     <li v-for="link in linkList">
+                        <a href="#">
+                           {{ link.link }}
+                           <div class="hot" v-if="link.new">NEW</div>
+                        </a>
+                     </li>
+                  </ul>
+                  <div class="icons">
+                     <i class="fab fa-twitter"></i>
+                     <i class="fab fa-instagram"></i>
+                     <i class="fab fa-behance"></i>
+                     <i class="fas fa-basketball-ball"></i>
+                     <i class="fab fa-flickr"></i>
+                     <i class="fab fa-git"></i>
+                     <i class="fab fa-linkedin"></i>
+                     <i class="fab fa-pinterest"></i>
                   </div>
                </div>
             </div>
-            <div class="header-bottom">
-               <div class="centered">
-                  <div class="logo"></div>
-                  <div class="nav-center"></div>
-                  <div class="nav-right"></div>
+            <div class="centered flex nav-bar">
+               <img src="dist/images/MasterStudy_logo.svg" alt="">
+               <div id="search-bar">
+                  <div id="category">
+                     <i class="fas fa-bars"></i>
+                     <p>CATEGORY</p>
+                  </div>
+                  <div id="search-container" class="flex">
+                     <input placeholder="Search courses">
+                     <i class="fas fa-search"></i>
+                  </div>
+               </div>
+               <div>
+                  <a class="icon-link" href=""><i class="fas fa-bullhorn"></i>Become an Instructor</a>
+                  <a class="icon-link" href=""><i class="fas fa-briefcase"></i>For Enterprise</a>
+               </div>
+               <div id="register">
+                  <a id="log-in" href=""><i class="far fa-user"></i>Log In</a>
+                  <button class="btn-rounded btn-blue">SING UP</button>
+                  <i></i>
+                  <i id="book-mark" class="far fa-bookmark"></i>
                </div>
             </div>
+
          </header>
          <!-- MAIN -->
          <main>
@@ -65,7 +98,7 @@
                   <p>Online post-graduate certificates are a popular way to develop your professional qualifications of Masterstudy</p>
                </div>
             </div>
-
+            <!-- ONLINE COURSES -->
             <div id="online-course">
                <div class="centered-70 jumbotron">
                   <div class="jumbotron-text">
@@ -254,6 +287,7 @@
                </div>
             </div>
          </main>
+         <!-- FOOTER -->
          <footer>
             <div class="centered-70 footer-info">
                <div class="col">

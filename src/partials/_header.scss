@@ -1,266 +1,105 @@
+// header {
+//    .header-top {
+//       height: 50px;
+//
+//       &:after {
+//          background-color: #E4E8ED;
+//           content: "";
+//           display: block;
+//           height: 1px;
+//
+//       }
+//    }
+//
+//    .header-bottom {
+//       height: 70px;
+//    }
+//    &:after {
+//       background-color: #E4E8ED;;
+//        content: "";
+//        display: block;
+//        height: 1px;
+//
+//    }
+// }
+
 header {
    .header-top {
-      height: 50px;
-
-      &:after {
-         background-color: #E4E8ED;
-          content: "";
-          display: block;
-          height: 1px;
-
-      }
-   }
-
-   .header-bottom {
-      height: 70px;
-   }
-   &:after {
-      background-color: #E4E8ED;;
-       content: "";
-       display: block;
-       height: 1px;
-
-   }
-}
-
-main {
-   .jumbotron {
-      height: 600px;
-      display: flex;
+      font-size: 12px;
+      color: $headerFontColor;
+      justify-content: space-between;
       align-items: center;
-      .jumbotron-text {
-         width: 60%;
-         max-width: 700px;
-         h1 {
-            color: #273044;
-            margin-bottom: 40px;
-         }
-         h3 {
-            margin-bottom: 40px;
-         }
-      }
-   }
-
-
-}
-
-#investing {
-   position: relative;
-   h1 {
-      line-height: 64px;
-   }
-   .jumbotron-text {
-      padding-top: 100px;
-   }
-   img {
-      position: absolute;
-      right: 10%;
-      top: 50%;
-      transform: translateY(-50%);
-      z-index: -100;
-   }
-}
-
-.blue-card-container {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: space-between;
-   padding: 50px 0;
-   .blue-card {
-      width: 32%;
-      background-color: $cardColor;
-      padding: 30px;
-      i {
-         color: $btnColor;
-      }
-      p {
-         font-size: 14px;
-         color: $fontGray;
-      }
-   }
-}
-
-
-#online-course {
-   background-image: url("../dist/images/online-course.png");
-   background-repeat: no-repeat;
-   background-position: center;
-   background-size: cover;
-   background-color: $cardColor;
-}
-
-#reviews {
-   height: 600px;
-   background-image: url("../dist/images/brooke-cagle-224821-unsplash-1-1920x700.jpg");
-   background-size: cover;
-   background-repeat: no-repeat;
-   .flex-container {
-      @include flex-container;
-      align-items: center;
-   }
-   .review-info {
-      padding: 80px 90px;
-      background-color: white;
-      width: 65%;
-      min-width: 700px;
-      height: 80%;
-      position: relative;
-      h2 {
-         font-size: 18px;
-      }
-      .person-info {
-         font-size: 14px;
+      border-bottom: 1px solid #E4E8ED;
+      #language {
          font-weight: 300;
       }
-      .triangle-right {
-         position: absolute;
-         right: -15px;
-         top: 50%;
-         transform: translateY(-50%);
-         width: 0;
-         height: 0;
-         border-top: 10px solid transparent;
-         border-left: 15px solid WHITE;
-         border-bottom: 10px solid transparent;
-    }
+      .header-top__right {
+         ul {
+            list-style-type: none;
+            li {
+               display: inline-block;
+               padding: 0 20px;
+               a {
+                  text-decoration: none;
+                  color: inherit;
+                  position: relative;
+                  .hot {
+                     position: absolute;
+                     right: -10px;
+                     bottom: 15px;
+                     background-color: #dc1245;
+                     color: white;
+                     font-size: 8px;
+                     padding: 2px 3px;
+                     border-radius: 3px 0 3px 0;
+                  }
+               }
+            }
+         }
+         .icons {
+            i {
+               font-size: 16px;
+               padding-left: 5px;
+               &:hover {
+                  color: $btnColor;
+                  cursor: pointer;
+               }
+            }
+         }
+      }
    }
-}
-
-#business {
-   padding: 60px 50px;
-   .business-card-container {
-      @include flex-container;
+   .nav-bar {
       justify-content: space-between;
-      .business-card {
-         width: 49%;
-         border: 1px solid #E4E8ED;
-         padding: 40px 60px 40px 40px;
-         @include flex-container;
-         img {
-            padding-right: 30px;
-            align-self: center;
-         }
-         .business-card__right {
-            @include flex-container;
-            margin: auto;
-            flex-direction: column;
-            align-items: flex-start;
-         }
-         p {
-            font-size: 18px;
-            font-weight: 200;
+      align-items: center;
+      .icon-link {
+         margin-right: 10px;
+         text-decoration: none;
+         color: black;
+         i {
+            color: $btnColor;
+            margin-right: 10px;
          }
       }
-   }
-}
-
-#numbers {
-   background-color: $cardColor;
-   #numbers-info {
-      height: 500px;
-      background-image: url("../dist/images/we_proud.png");
-      background-position: bottom;
-      background-size: contain;
-      background-repeat: no-repeat;
-      text-align: center;
-      ul {
-         list-style-type: none;
-         @include flex-container;
-         li {
-            width: 25%;
-            padding: 20px 0;
-            height: max-content;
-            .nmb {
-               font-size: 70px;
-               font-weight: 300;
-            }
-            .sub-nmb {
-               font-size: 20px;
-            }
-            &:not(:last-child) {
-               border-right: 1px solid #E4E8ED;;
-            }
-         }
-      }
-   }
-
-}
-
-#subscribe {
-   background-color: $subscribeColor;
-   padding: 50px 0;
-   .centered-70 {
-      color: white;
-      @include flex-container;
-      .col-left {
-         width: 60%;
-         padding-right: 10px;
-      }
-      .col-right {
-         width: 40%;
-         .title {
-            font-size: 14px;
-         }
-         #input-container {
-            height: 40px;
-            .btn-blue {
-               padding: 0 15px;
-            }
-            input {
-               width: 100%;
-               padding: 5px;
-            }
-         }
-      }
-   }
-
-}
-
-
-
-
-
-
-#recent-courses {
-   max-width: 1720px;
-   margin: 0 auto;
-   .courses-nav-bar{
-      @include clearList;
-      text-align: center;
-      padding-bottom: 50px;
-      li {
+      #register {
+         display: flex;
+         align-items: center;
          color: $btnColor;
-         margin: 0 20px;
-         font-weight: 200;
-      }
-      .active {
-         background-color: #F0F4FA;
-         color: #777777;
-         border-radius: 50px;
-         padding: 15px 20px;
-      }
-   }
-   .btn-container {
-      text-align: center;
-      margin: 20px 0 100px 0;
-   }
-}
-
-#popular-courses {
-   background-color: $cardColor;
-   .arrow-container {
-      padding-bottom: 50px;
-      text-align: center;
-      .arrow {
-         padding: 15px 20px;
-         border-top: 1px solid #E4E8ED;
-         background-color: white;
-         color: #E4E8ED;
-         &:hover {
-            background-color: #457992;
-            color: white;
-            cursor: pointer;
+         #log-in {
+            color: $btnColor;
+            text-decoration: none;
+            margin-right: 20px;
+            i {
+               margin-right: 5px;
+            }
+         }
+         button {
+            padding: 20px 40px;
+         }
+         #book-mark {
+            font-size: 30px;
+            margin-left: 20px;
          }
       }
+
    }
 }

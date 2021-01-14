@@ -15,19 +15,16 @@ input:focus {
 }
 
 button,
-input {
+input,
+select {
   border: none;
-}
-
-.open-sans {
-  font-family: "Open Sans", sans-serif;
 }
 
 .centered {
   max-width: 1720px;
   margin: 0 auto;
   height: 100%;
-  padding: 0 15px;
+  padding: 20px 50px;
 }
 
 .centered-70 {
@@ -195,22 +192,77 @@ input {
 }
 
 header .header-top {
-  height: 50px;
+  font-size: 12px;
+  color: #777;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #E4E8ED;
 }
-header .header-top:after {
-  background-color: #E4E8ED;
-  content: "";
-  display: block;
-  height: 1px;
+header .header-top #language {
+  font-weight: 300;
 }
-header .header-bottom {
-  height: 70px;
+header .header-top .header-top__right ul {
+  list-style-type: none;
 }
-header:after {
-  background-color: #E4E8ED;
-  content: "";
-  display: block;
-  height: 1px;
+header .header-top .header-top__right ul li {
+  display: inline-block;
+  padding: 0 20px;
+}
+header .header-top .header-top__right ul li a {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+header .header-top .header-top__right ul li a .hot {
+  position: absolute;
+  right: -10px;
+  bottom: 15px;
+  background-color: #dc1245;
+  color: white;
+  font-size: 8px;
+  padding: 2px 3px;
+  border-radius: 3px 0 3px 0;
+}
+header .header-top .header-top__right .icons i {
+  font-size: 16px;
+  padding-left: 5px;
+}
+header .header-top .header-top__right .icons i:hover {
+  color: #1B5ECA;
+  cursor: pointer;
+}
+header .nav-bar {
+  justify-content: space-between;
+  align-items: center;
+}
+header .nav-bar .icon-link {
+  margin-right: 10px;
+  text-decoration: none;
+  color: black;
+}
+header .nav-bar .icon-link i {
+  color: #1B5ECA;
+  margin-right: 10px;
+}
+header .nav-bar #register {
+  display: flex;
+  align-items: center;
+  color: #1B5ECA;
+}
+header .nav-bar #register #log-in {
+  color: #1B5ECA;
+  text-decoration: none;
+  margin-right: 20px;
+}
+header .nav-bar #register #log-in i {
+  margin-right: 5px;
+}
+header .nav-bar #register button {
+  padding: 20px 40px;
+}
+header .nav-bar #register #book-mark {
+  font-size: 30px;
+  margin-left: 20px;
 }
 
 main .jumbotron {
