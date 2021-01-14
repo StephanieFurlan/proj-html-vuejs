@@ -105,8 +105,8 @@
                               {{ course. discount }}
                            </div>
                            <div v-if="course.stars">
-                              <i v-for="i in course.stars" class="fas fa-star course-star star"></i>
-                              <i v-for="i in (5 - course.stars)"class="far fa-star star"></i>{{course.stars}}
+                              <img v-for="i in course.stars" src="dist/images/stars/starfull.svg" alt="">
+                              <img v-for="i in (5 - course.stars)" src="dist/images/stars/staremptyl.svg" alt="">{{course.stars}}
                            </div>
                            <div class="course-hours" v-else>
                               <i class="far fa-clock"></i> {{ course.hours}} hours
@@ -196,8 +196,8 @@
                               {{ course. discount }}
                            </div>
                            <div v-if="course.stars">
-                              <i v-for="i in course.stars" class="fas fa-star course-star star"></i>
-                              <i v-for="i in (5 - course.stars)"class="far fa-star star"></i>{{course.stars}}
+                              <img v-for="i in course.stars" src="dist/images/stars/starfull.svg" alt="">
+                              <img v-for="i in (5 - course.stars)" src="dist/images/stars/staremptyl.svg" alt="">{{course.stars}}
                            </div>
                            <div class="course-hours" v-else>
                               <i class="far fa-clock"></i> {{ course.hours}} hours
@@ -237,7 +237,6 @@
                      </div>
                   </div>
                </div>
-
             </div>
             <!-- REVIEWS -->
             <div id="reviews">
@@ -255,6 +254,63 @@
                </div>
             </div>
          </main>
+         <footer>
+            <div class="centered-70 footer-info">
+               <div class="col">
+                  <h3 class="title">About</h3>
+                  <p>
+                     <a href="#">Masterstudy</a> is Education WordPress theme featured by Learning Management System (LMS) for online education.
+                     Developed by <a href="#">StylemixThemes.</a>
+                  </p>
+                  <div class="icons">
+                     <i class="fab fa-facebook"></i>
+                     <i class="fab fa-twitter"></i>
+                     <i class="fab fa-instagram"></i>
+                  </div>
+               </div>
+               <div class="col">
+                  <h3 class="title">Contact</h3>
+                  <p id="address">USA, Callifornia 20, First Avenue, Callifornia</p>
+                  <p>+1 212 458 300 32</p>
+                  <p>+1 212 375 24 14</p>
+                  <p id="email">info@masterstudy.com</p>
+
+               </div>
+               <div class="col">
+                  <h3 class="title">Pages</h3>
+                  <div class="flex">
+                     <ul class="page-list">
+                        <li>Blog</li>
+                        <li>Home</li>
+                        <li>Shortcodes</li>
+                     </ul>
+                     <ul class="page-list">
+                        <li>Courses</li>
+                        <li>Memberships</li>
+                        <li>Typography</li>
+                     </ul>
+                  </div>
+               </div>
+               <div class="col">
+                  <h3 class="title">Blog</h3>
+                  <div class="blog-row">
+                     <img src="dist/images/photo-1517520287167-4bbf64a00d66-75x75.jpeg" alt="">
+                     <div class="blog-info">
+                        <h5>Our main target is to "Developing Yourself as a Leader"</h5>
+                        <p>-- August 9, 2018</p>
+                     </div>
+                  </div>
+                  <div class="blog-row">
+                     <img src="dist/images/photo-1490376840453-5f616fbebe5b-75x75.jpeg" alt="">
+                     <div class="blog-info">
+                        <h5>Those Other College Expenses You Aren't Yhinking About</h5>
+                        <p>-- June 3, 2015</p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </footer>
+
       </div>
    </body>
    <script src="app.js" charset="utf-8"></script>

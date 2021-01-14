@@ -44,6 +44,9 @@ input {
   letter-spacing: 1px;
   background-color: #1B5ECA;
 }
+.btn-blue:hover {
+  background-color: #4ED7A8;
+}
 
 .btn-rounded {
   border-radius: 50px;
@@ -97,6 +100,98 @@ input {
 .flex {
   display: flex;
   height: 100%;
+}
+
+.course-card__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 0;
+  padding: 0 50px;
+}
+.course-card__container .placeholder {
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+.course-card {
+  width: calc(100% / 6 - 10px);
+  margin-bottom: 50px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E4E8ED;
+  background-color: white;
+}
+.course-card .course-card__img {
+  position: relative;
+}
+.course-card .course-card__img img {
+  width: 100%;
+}
+.course-card .course-card__img .release {
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  padding: 3px 5px;
+  z-index: 20;
+}
+.course-card .course-card__img .hot {
+  background-color: red;
+}
+.course-card .course-card__img .special {
+  background-color: orange;
+}
+.course-card .course-card__img .new {
+  background-color: green;
+}
+.course-card .course-card__info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.course-card .course-card__info .course-type {
+  color: #B3B3B3;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.course-card .course-card__info .course-type:after {
+  content: ">";
+}
+.course-card .course-card__info .course-card__top {
+  margin-bottom: 10px;
+}
+.course-card .course-card__info .course-card__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #E4E8ED;
+  padding-top: 30px;
+  position: relative;
+}
+.course-card .course-card__info .course-card__bottom .course-discount {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  color: #B3B3B3;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.course-card .course-card__info .course-card__bottom .course-hours {
+  font-size: 12px;
+}
+.course-card .course-card__info .course-card__bottom .course-price {
+  font-size: 16px;
+  font-weight: bold;
 }
 
 header .header-top {
@@ -312,105 +407,6 @@ main .jumbotron .jumbotron-text h3 {
   padding: 5px;
 }
 
-.course-card__container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  padding-bottom: 0;
-  padding: 0 50px;
-}
-
-.course-card {
-  width: calc(100% / 6 - 10px);
-  margin-bottom: 50px;
-  min-width: 220px;
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #E4E8ED;
-  background-color: white;
-}
-.course-card .course-card__img {
-  position: relative;
-}
-.course-card .course-card__img img {
-  width: 100%;
-}
-.course-card .course-card__img .release {
-  color: white;
-  border-radius: 5px;
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  padding: 3px 5px;
-  z-index: 20;
-}
-.course-card .course-card__img .hot {
-  background-color: red;
-}
-.course-card .course-card__img .special {
-  background-color: orange;
-}
-.course-card .course-card__img .new {
-  background-color: green;
-}
-.course-card .course-card__info {
-  padding: 15px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%;
-}
-.course-card .course-card__info .course-type {
-  color: #B3B3B3;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-.course-card .course-card__info .course-type:after {
-  content: ">";
-}
-.course-card .course-card__info .course-card__top {
-  margin-bottom: 10px;
-}
-.course-card .course-card__info .course-card__bottom {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border-top: 1px solid #E4E8ED;
-  padding-top: 30px;
-  position: relative;
-}
-.course-card .course-card__info .course-card__bottom .course-discount {
-  position: absolute;
-  right: 0;
-  top: 10px;
-  color: #B3B3B3;
-  font-size: 14px;
-  text-decoration: line-through;
-}
-.course-card .course-card__info .course-card__bottom .course-hours {
-  font-size: 12px;
-}
-.course-card .course-card__info .course-card__bottom .course-star {
-  color: #EFB467;
-}
-.course-card .course-card__info .course-card__bottom .star {
-  font-size: 14px;
-}
-.course-card .course-card__info .course-card__bottom .course-price {
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.placeholder {
-  visibility: hidden;
-  height: 0;
-  padding: 0;
-  margin: 0;
-  border-top-width: 0;
-  border-bottom-width: 0;
-}
-
 #recent-courses {
   max-width: 1720px;
   margin: 0 auto;
@@ -449,8 +445,76 @@ main .jumbotron .jumbotron-text h3 {
   text-align: center;
 }
 #popular-courses .arrow-container .arrow {
-  padding: 15px;
+  padding: 15px 20px;
   border-top: 1px solid #E4E8ED;
   background-color: white;
   color: #E4E8ED;
+}
+#popular-courses .arrow-container .arrow:hover {
+  background-color: #457992;
+  color: white;
+  cursor: pointer;
+}
+
+footer {
+  padding: 50px 0;
+}
+footer .footer-info {
+  display: flex;
+  flex-wrap: wrap;
+}
+footer .col {
+  min-width: 200px;
+  width: 25%;
+  padding-right: 15px;
+}
+footer .col h3 {
+  font-weight: 700;
+}
+footer .col p {
+  font-size: 16px;
+}
+footer .col p a {
+  text-decoration: none;
+  color: #1B5ECA;
+}
+footer .col .icons {
+  color: #A6ACB7;
+  padding-top: 10px;
+}
+footer .col .icons i {
+  font-size: 30px;
+  padding-right: 15px;
+}
+footer .col #address {
+  margin-bottom: 10px;
+}
+footer .col #email {
+  margin-top: 10px;
+  color: #A6ACB7;
+}
+footer .col .page-list {
+  width: 50%;
+  padding-right: 5px;
+  margin-left: 15px;
+}
+footer .col .page-list li {
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+footer .col .blog-row {
+  display: flex;
+  margin-bottom: 10px;
+}
+footer .col .blog-row .blog-info {
+  padding-left: 10px;
+}
+footer .col .blog-row .blog-info h5 {
+  color: #A6ACB7;
+  margin-bottom: 5px;
+}
+footer .col .blog-row .blog-info p {
+  color: #CCCCCC;
+  font-weight: 300;
+  font-size: 14px;
 }

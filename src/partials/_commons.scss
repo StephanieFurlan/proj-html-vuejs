@@ -6,7 +6,6 @@
 
 body {
    font-family: 'Montserrat', sans-serif;
-
 }
 
 button:focus,
@@ -44,9 +43,11 @@ input {
    font-size: 14px;
    font-weight: bold;
    color: white;
-
    letter-spacing: 1px;
    background-color: $btnColor;
+   &:hover {
+      background-color: #4ED7A8;
+   }
 }
 
 .btn-rounded {
@@ -113,6 +114,101 @@ input {
       list-style-type: none;
       li {
          display: inline-block;
+      }
+   }
+}
+
+// courses cards layout
+
+.course-card__container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   padding-bottom: 0;
+   padding: 0 50px;
+   .placeholder {
+     visibility: hidden;
+     height: 0;
+     padding: 0;
+     margin: 0;
+     border-top-width: 0;
+     border-bottom-width: 0;
+   }
+}
+
+.course-card {
+   width: calc(100% / 6 - 10px);
+   margin-bottom: 50px;
+   min-width: 220px;
+   display: flex;
+   flex-direction: column;
+   border: 1px solid #E4E8ED;
+   background-color: white;
+   .course-card__img {
+      position: relative;
+      img {
+         width: 100%;
+      }
+      .release {
+         color: white;
+         border-radius: 5px;
+         position: absolute;
+         top: 10px;
+         right: 20px;
+         padding: 3px 5px;
+         z-index: 20;
+      }
+      .hot {
+         background-color: red;
+      }
+      .special {
+         background-color: orange;
+      }
+      .new {
+         background-color: green;
+      }
+   }
+
+   .course-card__info {
+      padding: 15px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 100%;
+      .course-type {
+         color: #B3B3B3;
+         font-size: 14px;
+         margin-bottom: 10px;
+         &:after {
+            content: ">";
+         }
+      }
+      .course-card__top {
+         margin-bottom: 10px;
+      }
+      .course-card__bottom {
+         display: flex;
+         flex-direction: row;
+         justify-content: space-between;
+         align-items: center;
+         border-top: 1px solid #E4E8ED;
+         padding-top: 30px;
+         position: relative;
+         .course-discount {
+            position: absolute;
+            right: 0;
+            top: 10px;
+            color: #B3B3B3;
+            font-size: 14px;
+            text-decoration: line-through;
+         }
+         .course-hours {
+            font-size: 12px;
+         }
+         .course-price {
+            font-size: 16px;
+            font-weight: bold;
+         }
       }
    }
 }
