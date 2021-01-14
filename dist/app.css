@@ -417,7 +417,7 @@ main .jumbotron .jumbotron-text h3 {
 }
 #recent-courses .courses-nav-bar {
   text-align: center;
-  padding: 50px 0;
+  padding-bottom: 50px;
 }
 #recent-courses .courses-nav-bar ul {
   list-style-type: none;
@@ -443,4 +443,14 @@ main .jumbotron .jumbotron-text h3 {
 
 #popular-courses {
   background-color: #F2F6FB;
+}
+#popular-courses .arrow-container {
+  padding-bottom: 50px;
+  text-align: center;
+}
+#popular-courses .arrow-container .arrow {
+  padding: 15px;
+  border-top: 1px solid #E4E8ED;
+  background-color: white;
+  color: #E4E8ED;
 }

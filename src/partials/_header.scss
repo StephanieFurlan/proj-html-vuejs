@@ -330,7 +330,7 @@ main {
    .courses-nav-bar{
       @include clearList;
       text-align: center;
-      padding: 50px 0;
+      padding-bottom: 50px;
       li {
          color: $btnColor;
          margin: 0 20px;
@@ -351,4 +351,15 @@ main {
 
 #popular-courses {
    background-color: $cardColor;
+   .arrow-container {
+      padding-bottom: 50px;
+      text-align: center;
+      .arrow {
+         padding: 15px;
+         border-top: 1px solid #E4E8ED;
+         background-color: white;
+         color: #E4E8ED;
+      }
+   }
+
 }
