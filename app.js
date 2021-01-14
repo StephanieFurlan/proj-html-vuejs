@@ -4,6 +4,7 @@ var app = new Vue({
    el: "#app",
    data: {
       languages: ["English", "Italian", "Deutsch"],
+      courseTypes: [],
       recentCoursesList: [
          {
             imgUrl: "photo-1461749280684-dccba630e2f6-272x161.jpeg",
@@ -151,7 +152,7 @@ var app = new Vue({
             release: false
          },
          {
-            imgUrl: "",
+            imgUrl: "cat_2-272x161.jpg",
             type: "Art",
             title: "Real Things Art Printing by Jason Ni",
             stars: false,
@@ -162,10 +163,10 @@ var app = new Vue({
             release: "new"
          },
          {
-            imgUrl: "",
+            imgUrl: "course-preview-272x161.jpg",
             type: "Software Development",
             title: "Basics of Masterstudy",
-            stars: 5,
+            stars: 3,
             hours: false,
             discount: false,
             price: "Free",
@@ -184,7 +185,7 @@ var app = new Vue({
             release: "special"
          },
          {
-            imgUrl: "",
+            imgUrl: "photo-1416339134316-0e91dc9ded92-scaled-272x161.jpeg",
             type: "Comunication",
             title: "Design Instruments for Communication",
             stars: false,
@@ -206,5 +207,12 @@ var app = new Vue({
             release: false
          }
       ]
+   },
+   mounted() {
+      this.recentCoursesList.forEach(item => {
+         if (!this.courseTypes.includes(item.type)) {
+            this.courseTypes.push(item.type);
+         }
+      })
    }
 })

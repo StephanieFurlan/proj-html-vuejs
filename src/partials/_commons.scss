@@ -107,3 +107,12 @@ input {
 .flex {
    @include flex-container;
 }
+
+@mixin clearList {
+   ul {
+      list-style-type: none;
+      li {
+         display: inline-block;
+      }
+   }
+}
