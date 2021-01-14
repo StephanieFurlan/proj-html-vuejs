@@ -123,6 +123,13 @@ select {
   flex-direction: column;
   border: 1px solid #E4E8ED;
   background-color: white;
+  transition: transform 0.4s;
+}
+.course-card:hover {
+  transform: scale(1.3);
+  transform-origin: 50% 50%;
+  z-index: 20;
+  border: 1px solid orange;
 }
 .course-card .course-card__img {
   position: relative;
@@ -249,7 +256,7 @@ header .nav-bar #search-bar #category i {
 header .nav-bar #search-bar #search-container {
   align-items: center;
   height: 50px;
-  width: 350px;
+  width: 450px;
 }
 header .nav-bar #search-bar #search-container .left {
   width: calc(100% - 50px);
@@ -354,6 +361,9 @@ main .jumbotron .jumbotron-text h3 {
 .blue-card-container .blue-card p {
   font-size: 14px;
   color: #A6ACB7;
+}
+.blue-card-container .blue-card:hover {
+  transform: translateY(-30px);
 }
 
 #online-course {
@@ -544,6 +554,59 @@ main .jumbotron .jumbotron-text h3 {
   background-color: #457992;
   color: white;
   cursor: pointer;
+}
+
+#course-gallery {
+  padding-top: 100px;
+}
+#course-gallery .row-gallery {
+  padding-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+#course-gallery .row-gallery .col-2 {
+  width: calc(100% / 3 * 2 - 20px);
+}
+#course-gallery .row-gallery .col-1 {
+  width: calc(100% / 3 - 40px);
+  display: flex;
+  flex-direction: column;
+}
+#course-gallery .row-gallery .col-1.col-special {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+#course-gallery .gallery-item {
+  width: 100%;
+}
+#course-gallery .gallery-item img {
+  width: 100%;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+#course-gallery .gallery-item .img-container:hover img {
+  transform: scale(1.1);
+}
+#course-gallery .gallery-item .img-container {
+  overflow: hidden;
+}
+#course-gallery .gallery-item .item-info {
+  display: flex;
+  justify-content: space-between;
+}
+#course-gallery .gallery-item .item-info a {
+  text-decoration: none;
+  color: black;
+  font-size: 18px;
+}
+#course-gallery .gallery-item .item-info a:hover {
+  color: #1B5ECA;
+}
+#course-gallery .gallery-item .item-info span {
+  font-size: 14px;
+  pointer: cursor;
 }
 
 footer {

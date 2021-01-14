@@ -51,6 +51,9 @@ main {
          font-size: 14px;
          color: $fontGray;
       }
+      &:hover {
+         transform: translateY(-30px);
+      }
    }
 }
 
@@ -227,6 +230,60 @@ main {
             background-color: #457992;
             color: white;
             cursor: pointer;
+         }
+      }
+   }
+}
+
+#course-gallery {
+   padding-top: 100px;
+   .row-gallery {
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      .col-2 {
+         width: calc(100% / 3 * 2 - 20px);
+      }
+      .col-1 {
+         width: calc(100% / 3 - 40px);
+         display: flex;
+         flex-direction: column;
+         &.col-special {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+         }
+      }
+   }
+   .gallery-item {
+      width: 100%;
+      img {
+         width: 100%;
+         margin-bottom: 10px;
+         cursor: pointer;
+         transition: all 0.3s;
+      }
+      .img-container:hover img {
+         transform: scale(1.1);
+      }
+
+      .img-container {
+         overflow: hidden;
+      }
+      .item-info {
+         display: flex;
+         justify-content: space-between;
+         a {
+            text-decoration: none;
+            color: black;
+            font-size: 18px;
+            &:hover {
+               color: $btnColor;
+            }
+         }
+         span {
+            font-size: 14px;
+            pointer: cursor;
          }
       }
    }
