@@ -235,6 +235,44 @@ header .nav-bar {
   justify-content: space-between;
   align-items: center;
 }
+header .nav-bar #search-bar {
+  align-items: center;
+}
+header .nav-bar #search-bar #category {
+  align-items: center;
+  color: #777;
+  margin-right: 10px;
+}
+header .nav-bar #search-bar #category i {
+  margin-right: 10px;
+}
+header .nav-bar #search-bar #search-container {
+  align-items: center;
+  height: 50px;
+  width: 350px;
+}
+header .nav-bar #search-bar #search-container .left {
+  width: calc(100% - 50px);
+  height: 100%;
+}
+header .nav-bar #search-bar #search-container .left input {
+  height: 100%;
+  padding-left: 15px;
+  width: 100%;
+  background-color: #EAEAEA;
+}
+header .nav-bar #search-bar #search-container .right {
+  width: 50px;
+  height: 100%;
+  background-color: #1B5ECA;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .nav-bar #search-bar #search-container .right i {
+  color: white;
+  font-size: 20px;
+}
 header .nav-bar .icon-link {
   margin-right: 10px;
   text-decoration: none;
