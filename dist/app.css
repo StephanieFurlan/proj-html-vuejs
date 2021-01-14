@@ -52,9 +52,9 @@ input {
 
 .title-box {
   text-align: center;
-  padding-top: 100px;
-  width: 60%;
-  margin: 0 auto 50px auto;
+  padding: 100px 0px 50px 0;
+  width: 40%;
+  margin: 0 auto;
 }
 
 .title-1 {
@@ -176,6 +176,7 @@ main .jumbotron .jumbotron-text h3 {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  background-color: #F2F6FB;
 }
 
 #reviews {
@@ -260,7 +261,6 @@ main .jumbotron .jumbotron-text h3 {
 }
 #numbers #numbers-info ul {
   list-style-type: none;
-  margin-top: 50px;
   display: flex;
   height: 100%;
 }
@@ -310,6 +310,81 @@ main .jumbotron .jumbotron-text h3 {
 #subscribe .centered-70 .col-right #input-container input {
   width: 100%;
   padding: 5px;
+}
+
+.course-card__container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding-bottom: 0;
+}
+
+.course-card {
+  width: calc(100% / 6 - 10px);
+  margin-bottom: 10px;
+  min-width: 272px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #E4E8ED;
+}
+.course-card .course-card__info {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.course-card .course-card__info .course-type {
+  color: #B3B3B3;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.course-card .course-card__info .course-type:after {
+  content: ">";
+}
+.course-card .course-card__info .course-card__top {
+  margin-bottom: 10px;
+}
+.course-card .course-card__info .course-card__bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #E4E8ED;
+  padding-top: 30px;
+  position: relative;
+}
+.course-card .course-card__info .course-card__bottom .course-discount {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  color: #B3B3B3;
+  font-size: 14px;
+  text-decoration: line-through;
+}
+.course-card .course-card__info .course-card__bottom .course-hours {
+  font-size: 12px;
+}
+.course-card .course-card__info .course-card__bottom .course-star {
+  color: #EFB467;
+}
+.course-card .course-card__info .course-card__bottom .course-price {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.placeholder {
+  visibility: hidden;
+  height: 0;
+  padding: 0;
+  margin: 0;
+  border-top-width: 0;
+  border-bottom-width: 0;
+}
+
+#recent-courses {
+  max-width: 1720px;
+  margin: 0 auto;
 }
 
 #popular-courses {

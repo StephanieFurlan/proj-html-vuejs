@@ -15,6 +15,7 @@
    </head>
    <body>
       <div id="app">
+         <!-- HEADER -->
          <header>
             <div class="header-top">
                <div class="centered">
@@ -33,7 +34,9 @@
                </div>
             </div>
          </header>
+         <!-- MAIN -->
          <main>
+            <!-- MAIN JUMBOTRON -->
             <div id="investing">
                <div class="centered-70 jumbotron">
                   <div class="jumbotron-text">
@@ -44,6 +47,7 @@
                </div>
                <img src="dist/images/base.png" alt="">
             </div>
+            <!-- BLUE CARDS -->
             <div class="centered-70 blue-card-container">
                <div class="blue-card">
                   <i class="fas fa-globe-africa fa-3x title"></i>
@@ -76,6 +80,38 @@
                <div class="title-box">
                   <h2 class="title title-2">Recent Courses</h2>
                </div>
+               <div class="course-card__container">
+                  <div v-for="course in recentCoursesList" class="course-card">
+                     <div class="course-card__img">
+                        <img :src="'dist/images/courses/' + course.imgUrl" alt="">
+                     </div>
+                     <div class="course-card__info">
+                        <div class="course-card__top">
+                           <div class="course-type">{{ course.type }}</div>
+                           <div class="course-title">{{ course.title }}</div>
+                        </div>
+
+                        <div class="course-card__bottom">
+                           <div class="course-discount" v-if="course.discount">
+                              {{ course. discount }}
+                           </div>
+                           <div v-if="course.stars">
+                              <i v-for="i in course.stars" class="fas fa-star course-star"></i>
+                              <i v-for="i in (5 - course.stars)"class="far fa-star"></i>{{course.stars}}
+                           </div>
+                           <div class="course-hours" v-else>
+                              <i class="far fa-clock"></i> {{ course.hours}} hours
+                           </div>
+                           <div v-if="course.price" class="course-price">
+                              {{course.price}}
+                           </div>
+
+                        </div>
+                     </div>
+                  </div>
+                  <!-- TRY TO FIND ANOTHER SOLUTION -->
+                  <div class="course-card placeholder" v-for="item in 6"></div>
+               </div>
             </div>
             <!-- NUMBERS -->
             <div id="numbers">
@@ -107,6 +143,7 @@
 
                </div>
             </div>
+            <!-- SUBSCRIBE -->
             <div id="subscribe">
                <div class="centered-70">
                   <div class="col-left">
@@ -128,7 +165,9 @@
                   <h2 class="title title-2">Popular Courses</h2>
                   <p class="paragraph-1">Discover our most popular courses for self learning</p>
                </div>
+               <div class="flex">
 
+               </div>
             </div>
             <!-- BUSINESS -->
             <div id="business">
@@ -152,6 +191,7 @@
                </div>
 
             </div>
+            <!-- REVIEWS -->
             <div id="reviews">
                <div class="centered-70">
                   <div class="flex-container">
