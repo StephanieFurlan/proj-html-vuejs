@@ -65,6 +65,7 @@
       }
       &:hover #category-list {
          display: block;
+         z-index: 20;
       }
    }
    #category-list {

@@ -285,6 +285,7 @@ section {
 }
 #header-bottom #category:hover #category-list {
   display: block;
+  z-index: 20;
 }
 #header-bottom #category-list {
   display: none;
