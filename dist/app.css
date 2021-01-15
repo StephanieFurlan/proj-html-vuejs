@@ -238,6 +238,10 @@ section {
 #header-top #header-top__inner #language {
   color: #aaa;
 }
+#header-top #header-top__inner #language:hover {
+  color: #0A0A0A;
+  cursor: pointer;
+}
 #header-top #header-top__inner .right {
   display: flex;
   align-items: center;
@@ -245,6 +249,10 @@ section {
 #header-top #header-top__inner .right .header-top__menu li {
   padding: 0 20px;
   position: relative;
+}
+#header-top #header-top__inner .right .header-top__menu li:hover {
+  color: #0A0A0A;
+  cursor: pointer;
 }
 #header-top #header-top__inner .right .header-top__menu li .new {
   position: absolute;
@@ -261,7 +269,8 @@ section {
   font-size: 16px;
 }
 #header-top #header-top__inner .right #header-icons i:hover {
-  background-color: #195EC8;
+  color: #195EC8;
+  cursor: pointer;
 }
 
 #header-bottom #header-bottom__inner {
@@ -278,10 +287,13 @@ section {
   align-items: center;
   padding-right: 10px;
   position: relative;
-  cursor: pointer;
 }
 #header-bottom #category i {
   padding-right: 5px;
+}
+#header-bottom #category:hover {
+  color: #195EC8;
+  cursor: pointer;
 }
 #header-bottom #category:hover #category-list {
   display: block;
@@ -342,6 +354,7 @@ section {
 #header-bottom #book-mark {
   font-size: 20px;
   color: #195EC8;
+  cursor: pointer;
 }
 
 .col-2 {
