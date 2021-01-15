@@ -2,6 +2,14 @@
 var app = new Vue({
    el: "#app",
    data: {
+      maxStudents: 2000,
+      maxCourses: 950,
+      maxHours: 1600,
+      maxCountries: 150,
+      nmbStudents: 0,
+      nmbCourses: 0,
+      nmbHours: 0,
+      nmbCountries: 0,
       languages: ["English", "Italian", "Deutsch"],
       headerIcons: [
          {
@@ -308,7 +316,6 @@ var app = new Vue({
             group: "fab",
             prefix: "fa-",
          }
-
       ]
    },
    mounted() {
@@ -317,5 +324,19 @@ var app = new Vue({
             this.courseTypes.push(item.type);
          }
       })
+      setInterval(() => {
+            if (this.nmbStudents < this.maxStudents) {
+               this.nmbStudents++;
+            }
+            if (this.nmbCourses < this.maxCourses) {
+               this.nmbCourses++;
+            }
+            if (this.nmbHours < this.maxHours) {
+               this.nmbHours++;
+            }
+            if (this.nmbCountries < this.maxCountries) {
+               this.nmbCountries++;
+            }
+      }, 0.01);
    }
 })

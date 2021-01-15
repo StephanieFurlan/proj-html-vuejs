@@ -52,13 +52,13 @@
       }
    }
    .gallery-item {
-      img {
-         width: 100%;
-         margin-bottom: $borderXS;
-         transition: all 0.3s;
-      }
       .img-container {
          overflow: hidden;
+         img {
+            width: 100%;
+            margin-bottom: $borderXS;
+            transition: all 0.3s;
+         }
       }
       .item-info {
          display: flex;
@@ -71,6 +71,7 @@
       &:hover {
          img {
             transform: scale(1.1);
+            @include setPointer;
          }
          h4 {
             color: $blue;
@@ -86,6 +87,7 @@
    li {
       color: $blue;
       margin: 0 20px;
+      @include changeColorHover(#000000);
    }
    .active {
       background-color: #F0F4FA;

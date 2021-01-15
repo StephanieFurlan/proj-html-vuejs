@@ -142,6 +142,7 @@ section {
   transform-origin: 50% 50%;
   z-index: 20;
   border: 1px solid orange;
+  cursor: pointer;
 }
 .course-card .course-card__img {
   position: relative;
@@ -407,13 +408,13 @@ section {
 #course-gallery .row-gallery .col-1.col-special {
   justify-content: space-between;
 }
-#course-gallery .gallery-item img {
+#course-gallery .gallery-item .img-container {
+  overflow: hidden;
+}
+#course-gallery .gallery-item .img-container img {
   width: 100%;
   margin-bottom: 10px;
   transition: all 0.3s;
-}
-#course-gallery .gallery-item .img-container {
-  overflow: hidden;
 }
 #course-gallery .gallery-item .item-info {
   display: flex;
@@ -425,6 +426,7 @@ section {
 }
 #course-gallery .gallery-item:hover img {
   transform: scale(1.1);
+  cursor: pointer;
 }
 #course-gallery .gallery-item:hover h4 {
   color: #195EC8;
@@ -437,6 +439,10 @@ section {
 #courses-nav-bar li {
   color: #195EC8;
   margin: 0 20px;
+}
+#courses-nav-bar li:hover {
+  color: #000000;
+  cursor: pointer;
 }
 #courses-nav-bar .active {
   background-color: #F0F4FA;
