@@ -653,10 +653,17 @@ footer .col h3 {
 footer .col a {
   color: #195EC8;
 }
+footer .col a:hover {
+  text-decoration: underline;
+}
 footer .col i {
   padding: 20px 20px 20px 0;
   color: #aaa;
   font-size: 20px;
+}
+footer .col i:hover {
+  color: #195EC8;
+  cursor: pointer;
 }
 footer .col .blog-row {
   align-items: center;
@@ -673,6 +680,9 @@ footer .col .blog-row h5 {
 footer .col .blog-row p {
   color: #E4E8ED;
 }
+footer .col .blog-row:hover {
+  cursor: pointer;
+}
 footer .col .page-list {
   width: 50%;
 }
@@ -686,10 +696,18 @@ footer .col .page-list li:before {
   font-size: 20px;
   padding-right: 5px;
 }
+footer .col .page-list li:hover:hover {
+  color: #195EC8;
+  cursor: pointer;
+}
 footer #address,
 footer #fax {
   margin-bottom: 15px;
 }
 footer #email {
   color: #aaa;
+}
+footer #email:hover {
+  cursor: pointer;
+  text-decoration: underline;
 }
