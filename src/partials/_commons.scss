@@ -6,12 +6,16 @@
 
 body {
    font-family: 'Montserrat', sans-serif;
+   font-size: 14px;
+   p {
+     line-height: 20px;
+ }
 }
 
 button:focus,
 select:focus,
 input:focus {
-  outline: 0;
+   outline: 0;
 }
 
 button,
@@ -20,108 +24,122 @@ select {
    border: none;
 }
 
-.centered {
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+// containers for layout - two types
+.centered-big {
    max-width: 1720px;
    margin: 0 auto;
    height: 100%;
-   padding: 20px $space;
+   padding: 0 $container-space;
 }
-
-.centered-70 {
+.centered-small {
+   max-width: 1200px;
    width: 70%;
    margin: 0 auto;
    height: 100%;
-   max-width: 1200px;
+}
+// section padding
+section {
+   padding: 50px 0;
 }
 
+// mixins
+
+// flex-wrap container
+@mixin flex-wrap {
+   display: flex;
+   flex-wrap: wrap;
+}
+@mixin setPointer {
+   cursor: pointer;
+}
+
+// hover
+@mixin changeColorHover($color) {
+   &:hover {
+      color: $color;
+      @include setPointer;
+   }
+}
+
+// flex-classes
+.flex {
+   display: flex;
+}
+.flex-wrap {
+   @include flex-wrap;
+}
+
+
+// input bar
+.input-icon-wrap {
+   display: flex;
+}
+.input-icon {
+  background: $blue;
+  padding: 10px 15px;
+  color: white;
+}
+.input-with-icon {
+  border: none;
+  flex: 1;
+  padding: 10px;
+}
+
+
+// button blue set up
 .btn-blue {
    font-size: 14px;
-   font-weight: bold;
+   font-weight: $fontWeightL;
    color: white;
    letter-spacing: 1px;
-   background-color: $btnColor;
+   background-color: $blue;
    &:hover {
       background-color: #4ED7A8;
+      @include setPointer;
    }
-
 }
-
+// btn rounded layout
 .btn-rounded {
    border-radius: 50px;
-   padding: 23px 25px;
+   padding: 18px 20px;
 }
 
-// title - sizes
-
+// box with section title and paragraph
 .title-box {
    text-align: center;
-   padding: 100px 0px 50px 0;
    width: 40%;
    margin: 0 auto;
+   h2 {
+      font-size: 50px;
+   }
+   p {
+      font-size: 18px;
+   }
+   h2, p {
+      font-weight: 300;
+      padding-bottom: $borderL;
+   }
 }
 
-.title-1 {
-   font-size: 64px;
-   font-weight: 300;
-}
-
-.title-2 {
-   font-size: 50px;
-   font-weight: 300;
-}
-
-.title-3 {
-   font-size: 36px;
-   font-weight: 300;
-}
-.title-4 {
-   font-size: 24px;
-   font-weight: 400;
-}
-
-.title {
-   margin-bottom: 20px;
-}
-
-.paragraph-1 {
-   font-size: 18px;
-   font-weight: 200;
-   line-height: 30px;
-}
-
-.list-inline {
+// make list inline
+.clearList {
    list-style-type: none;
    li {
       display: inline-block;
    }
 }
 
-@mixin flex-container {
-   display: flex;
-   height: 100%;
-}
-
-.flex {
-   @include flex-container;
-}
-
-@mixin clearList {
-   ul {
-      list-style-type: none;
-      li {
-         display: inline-block;
-      }
-   }
-}
 
 // courses cards layout
-
 .course-card__container {
-   display: flex;
-   flex-wrap: wrap;
+   @include flex-wrap;
    justify-content: space-between;
-   padding-bottom: 0;
-   padding: 0 50px;
+   // to fill space on last line
    .placeholder {
      visibility: hidden;
      height: 0;
@@ -132,6 +150,7 @@ select {
    }
 }
 
+// card layout
 .course-card {
    width: calc(100% / 6 - 10px);
    margin-bottom: 50px;
@@ -147,6 +166,7 @@ select {
      z-index: 20;
      border: 1px solid orange;
    }
+   // img
    .course-card__img {
       position: relative;
       img {
@@ -171,7 +191,7 @@ select {
          background-color: green;
       }
    }
-
+   // text
    .course-card__info {
       padding: 15px;
       display: flex;
@@ -180,38 +200,57 @@ select {
       height: 100%;
       .course-type {
          color: #B3B3B3;
-         font-size: 14px;
-         margin-bottom: 10px;
+         font-size: 13px;
+         margin-bottom: $borderXS;
          &:after {
             content: ">";
          }
       }
+      .course-title,
+      .course-price {
+         font-size: 15px;
+         font-weight: $fontWeightM;
+      }
+
       .course-card__top {
-         margin-bottom: 10px;
+         margin-bottom: $borderXS;
       }
       .course-card__bottom {
          display: flex;
-         flex-direction: row;
          justify-content: space-between;
          align-items: center;
          border-top: 1px solid #E4E8ED;
-         padding-top: 30px;
+         padding-top: $borderL;
          position: relative;
          .course-discount {
             position: absolute;
             right: 0;
             top: 10px;
             color: #B3B3B3;
-            font-size: 14px;
+            font-size: 12px;
             text-decoration: line-through;
          }
-         .course-hours {
-            font-size: 12px;
-         }
-         .course-price {
-            font-size: 16px;
-            font-weight: bold;
-         }
       }
+   }
+}
+
+// class for business and reviews
+.box {
+   h3, p {
+      padding-bottom: $borderM;
+   }
+   h3 {
+      font-size: 36px;
+      font-weight: $fontWeightS;
+   }
+   h2 {
+      font-size: 18px;
+      font-weight: $fontWeightL;
+   }
+   p {
+      font-size: 18px;
+      font-weight: $fontWeightXS;
+      line-height: 32px;
+      opacity: 0.7;
    }
 }

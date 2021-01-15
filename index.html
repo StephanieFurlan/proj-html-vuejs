@@ -6,7 +6,7 @@
       <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
       <!-- Google Fonts - Open Sans -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
       <!-- Font Awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" integrity="sha512-+4zCK9k+qNFUR5X+cKL9EIR+ZOhtIloNl9GIKS57V1MyNsYpYcUrUeQc9vNfzsWfV28IaLL3i96P9sdNyeRssA==" crossorigin="anonymous" />
       <!-- style -->
@@ -15,412 +15,400 @@
    </head>
    <body>
       <div id="app">
-         <!-- HEADER -->
          <header>
-            <div class="centered flex header-top">
-               <select id="language">
-                  <option v-for="language in languages">{{ language }}</option>
-               </select>
-               <div class="header-top__right flex">
-                  <ul>
-                     <li v-for="link in linkList">
-                        <a href="#">
-                           {{ link.link }}
-                           <div class="hot" v-if="link.new">NEW</div>
-                        </a>
-                     </li>
-                  </ul>
-                  <div class="icons">
-                     <i class="fab fa-twitter"></i>
-                     <i class="fab fa-instagram"></i>
-                     <i class="fab fa-behance"></i>
-                     <i class="fas fa-basketball-ball"></i>
-                     <i class="fab fa-flickr"></i>
-                     <i class="fab fa-git"></i>
-                     <i class="fab fa-linkedin"></i>
-                     <i class="fab fa-pinterest"></i>
-                  </div>
-               </div>
-            </div>
-            <div class="centered flex nav-bar">
-               <img src="dist/images/MasterStudy_logo.svg" alt="">
-               <div id="search-bar" class="flex">
-                  <div id="category" class="flex">
-                     <i class="fas fa-bars"></i>
-                     <p>CATEGORY</p>
-                  </div>
-                  <div id="search-container" class="flex">
-                     <div class="left">
-                        <input placeholder="Search courses">
-                     </div>
+            <div id="header-top">
+               <div class="centered-big">
+                  <div id="header-top__inner">
+                     <!--languages -->
+                     <select id="language">
+                        <option v-for="language in languages">{{ language }}</option>
+                     </select>
                      <div class="right">
-                        <i class="fas fa-search"></i>
+                        <!-- navigation links -->
+                        <ul class="header-top__menu clearList">
+                           <li v-for="link in headerLinkList">
+                              <a href="#">
+                                 {{ link.link }}
+                                 <div class="new" v-if="link.new">NEW</div>
+                              </a>
+                           </li>
+                        </ul>
+                        <div id="header-icons">
+                           <i v-for="icon in headerIcons" :class="icon.group + ' ' + icon.prefix + icon.name"></i>
+                        </div>
                      </div>
                   </div>
                </div>
-               <div>
-                  <a class="icon-link" href=""><i class="fas fa-bullhorn"></i>Become an Instructor</a>
-                  <a class="icon-link" href=""><i class="fas fa-briefcase"></i>For Enterprise</a>
-               </div>
-               <div id="register">
-                  <a id="log-in" href=""><i class="far fa-user"></i>Log In</a>
-                  <button class="btn-rounded btn-blue">SING UP</button>
-                  <i></i>
-                  <i id="book-mark" class="far fa-bookmark"></i>
+            </div>
+            <div id="header-bottom">
+               <div class="centered-big">
+                  <div id="header-bottom__inner" class="flex-wrap">
+                     <img src="dist/images/MasterStudy_logo.svg" alt="">
+                     <div id="header-bottom__left" class="flex">
+                        <div id="category" class="flex">
+                           <i class="fas fa-bars"></i>
+                           <p>CATEGORY</p>
+                           <ul id="category-list">
+                              <li v-for="category in courseTypes"><a href="">{{category}}</a></li>
+                           </ul>
+
+                        </div>
+                        <div class="input-icon-wrap">
+                           <input id="search-input" type="text" class="input-with-icon" placeholder="Search courses">
+                           <span class="input-icon"><i class="fas fa-search"></i></span>
+                        </div>
+                     </div>
+                     <div id="header-bottom__center" class="flex">
+                        <a class="icon-link" href=""><i class="fas fa-bullhorn"></i>Become an Instructor</a>
+                        <a class="icon-link" href=""><i class="fas fa-briefcase"></i>For Enterprise</a>
+                     </div>
+                     <div id="header-bottom__right" class="flex">
+                        <a id="log-in" class="icon-link" href=""><i class="far fa-user"></i>Log In</a>
+                        <button id="btn-signup" class="btn-rounded btn-blue">SING UP</button>
+                        <i id="book-mark" class="far fa-bookmark"></i>
+                     </div>
+                  </div>
                </div>
             </div>
-
          </header>
          <!-- MAIN -->
          <main>
             <!-- MAIN JUMBOTRON -->
-            <div id="investing">
-               <div class="centered-70 jumbotron">
+            <section id="investing">
+               <div class="centered-small jumbotron">
                   <div class="jumbotron-text">
-                     <h1 class="title-1">Start Investing in You</h1>
+                     <h1>Start Investing in You</h1>
                      <h3>With over 1200 courses in 18 subjects, you're guaranteed to find something that's right for you.</h3>
                      <button class="btn-rounded btn-blue">JOIN FOR FREE</button>
                   </div>
                </div>
                <img src="dist/images/base.png" alt="">
-            </div>
+            </section>
             <!-- BLUE CARDS -->
-            <div class="centered-70 blue-card-container">
-               <div class="blue-card">
-                  <i class="fas fa-globe-africa fa-3x title"></i>
-                  <h4 class="title">Worldwide Recognize</h4>
-                  <p>Our online course certificates can be used around the world and also in most popular universities and companies.</p>
+            <section>
+               <div id="blue-card-container" class="centered-small">
+                  <div class="blue-card col-1">
+                     <i class="fas fa-globe-africa fa-3x"></i>
+                     <h4>Worldwide Recognize</h4>
+                     <p>Our online course certificates can be used around the world and also in most popular universities and companies.</p>
+                  </div>
+                  <div class="blue-card col-1" >
+                     <i class="fas fa-desktop fa-3x"></i>
+                     <h4>Mostly Online Learning (sd)</h4>
+                     <p>Masterstudy online certificates can be obtained in a range of specialized areas and typically take about a year to complete.</p>
+                  </div>
+                  <div class="blue-card col-1">
+                     <i class="far fa-calendar fa-3x"></i>
+                     <h4>Graduate in as little as 1 Year</h4>
+                     <p>Online post-graduate certificates are a popular way to develop your professional qualifications of Masterstudy</p>
+                  </div>
                </div>
-               <div class="blue-card">
-                  <i class="fas fa-desktop fa-3x title"></i>
-                  <h4 class="title">Mostly Online Learning (sd)</h4>
-                  <p>Masterstudy online certificates can be obtained in a range of specialized areas and typically take about a year to complete.</p>
+            </section>
+            <!-- IMAGE  GALLERY-->
+            <section id="course-gallery">
+               <div class="centered-small">
+                  <div class="row-gallery">
+                     <div class="col-2">
+                        <div class="gallery-item">
+                           <div class="img-container">
+                              <img src="dist/images/cat_1-770x375.jpg" alt="">
+                           </div>
+                           <div class="item-info">
+                              <h4>Software Developoment</h4>
+                              <span>5 Courses</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-1 col-special">
+                        <div class="gallery-item">
+                           <div class="img-container">
+                              <img src="dist/images/cat_2-370x155.jpg" alt="">
+                           </div>
+                           <div class="item-info">
+                              <h4>Art</h4>
+                              <span>8 Courses</span>
+                           </div>
+                        </div>
+
+                        <div class="gallery-item">
+                           <div class="img-container">
+                              <img src="dist/images/cat_3-370x155.jpg" alt="">
+                           </div>
+                           <div class="item-info">
+                              <h4>Material Design</h4>
+                              <span>5 Courses</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row-gallery">
+                     <div class="col-1">
+                        <div class="gallery-item">
+                           <div class="img-container">
+                              <img src="dist/images/cat_4-370x155.jpg" alt="">
+                           </div>
+                           <div class="item-info">
+                              <h4>Music</h4>
+                              <span>5 Courses</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-1">
+                        <div class="gallery-item">
+                           <div class="img-container">
+                              <img src="dist/images/cat_5-370x155.jpg" alt="">
+                              </div>
+                           <div class="item-info">
+                              <h4>Exercise</h4>
+                              <span>7 Courses</span>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="col-1">
+                        <div class="gallery-item">
+                           <div class="img-container">
+                              <img src="dist/images/cat_6-370x155.jpg" alt="">
+                           </div>
+                           <div class="item-info">
+                              <h4>Photography</h4>
+                              <span>4 Courses</span>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
                </div>
-               <div class="blue-card">
-                  <i class="far fa-calendar fa-3x title"></i>
-                  <h4 class="title">Graduate in as little as 1 Year</h4>
-                  <p>Online post-graduate certificates are a popular way to develop your professional qualifications of Masterstudy</p>
-               </div>
-            </div>
+            </section>
             <!-- ONLINE COURSES -->
-            <div id="online-course">
-               <div class="centered-70 jumbotron">
-                  <div class="jumbotron-text">
-                     <h1 class="title-2">Limitless learning, more possibilities</h1>
-                     <h3>Online courses open the opportunity for learning to almost anyone, regardless of their scheduling commitments.</h3>
-                     <button class="btn-rounded btn-blue">READ MORE</button>
-                  </div>
-               </div>
-            </div>
-            <div id="course-gallery" class="centered-70">
-               <div class="row-gallery">
-                  <div class="col-2">
-                     <div class="gallery-item">
-                        <div class="img-container">
-                           <img src="dist/images/cat_1-770x375.jpg" alt="">
-                        </div>
-                        <div class="item-info">
-                           <a href="">Software Developoment</a>
-                           <span>5 Courses</span>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-1 col-special">
-                     <div class="gallery-item">
-                        <div class="img-container">
-                           <img src="dist/images/cat_2-370x155.jpg" alt="">
-                        </div>
-                        <div class="item-info">
-                           <a href="">Art</a>
-                           <span>8 Courses</span>
-                        </div>
-                     </div>
-
-                     <div class="gallery-item">
-                        <div class="img-container">
-                           <img src="dist/images/cat_3-370x155.jpg" alt="">
-                        </div>
-                        <div class="item-info">
-                           <a href="">Material Design</a>
-                           <span>5 Courses</span>
-                        </div>
+            <section>
+               <div id="online-course">
+                  <div class="centered-small jumbotron">
+                     <div class="jumbotron-text">
+                        <h2>Limitless learning, more possibilities</h2>
+                        <h3>Online courses open the opportunity for learning to almost anyone, regardless of their scheduling commitments.</h3>
+                        <button class="btn-rounded btn-blue">READ MORE</button>
                      </div>
                   </div>
                </div>
-               <div class="row-gallery">
-                  <div class="col-1">
-                     <div class="gallery-item">
-                        <div class="img-container">
-                           <img src="dist/images/cat_4-370x155.jpg" alt="">
-                        </div>
-                        <div class="item-info">
-                           <a href="">Music</a>
-                           <span>5 Courses</span>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-1">
-                     <div class="gallery-item">
-                        <div class="img-container">
-                           <img src="dist/images/cat_5-370x155.jpg" alt="">
-                           </div>
-                        <div class="item-info">
-                           <a href="">Exercise</a>
-                           <span>7 Courses</span>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="col-1">
-                     <div class="gallery-item">
-                        <div class="img-container">
-                           <img src="dist/images/cat_6-370x155.jpg" alt="">
-                        </div>
-                        <div class="item-info">
-                           <a href="">Photography</a>
-                           <span>4 Courses</span>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
+            </section>
             <!-- RECENT COURSES -->
-            <div id="recent-courses">
-               <div class="title-box">
-                  <h2 class="title title-2">Recent Courses</h2>
-               </div>
-               <div class="courses-nav-bar">
-                  <ul>
-                     <li class="active">All Categories</li>
-                     <li v-for="type in courseTypes.slice(0,6)">{{ type }}</li>
-                  </ul>
-               </div>
-               <div class="course-card__container">
-                  <div v-for="course in recentCoursesList" class="course-card">
-                     <div class="course-card__img">
-                        <img :src="'dist/images/courses/' + course.imgUrl" alt="">
-                        <div v-if="course.release" class="release" :class="course.release">
-                           {{ course.release }}
-                        </div>
-                     </div>
-                     <div class="course-card__info">
-                        <div class="course-card__top">
-                           <div class="course-type">{{ course.type }}</div>
-                           <div class="course-title">{{ course.title }}</div>
-                        </div>
-
-                        <div class="course-card__bottom">
-                           <div class="course-discount" v-if="course.discount">
-                              {{ course. discount }}
-                           </div>
-                           <div v-if="course.stars">
-                              <img v-for="i in course.stars" src="dist/images/stars/starfull.svg" alt="">
-                              <img v-for="i in (5 - course.stars)" src="dist/images/stars/staremptyl.svg" alt="">{{course.stars}}
-                           </div>
-                           <div class="course-hours" v-else>
-                              <i class="far fa-clock"></i> {{ course.hours}} hours
-                           </div>
-                           <div v-if="course.price" class="course-price">
-                              {{course.price}}
-                           </div>
-
-                        </div>
-                     </div>
+            <section>
+               <div class="centered-big">
+                  <div class="title-box">
+                     <h2>Recent Courses</h2>
                   </div>
-                  <!-- TRY TO FIND ANOTHER SOLUTION -->
-                  <div class="course-card placeholder" v-for="item in 6"></div>
-               </div>
-               <div class="btn-container">
-                  <button class="btn-rounded btn-blue">SHOW ALL</button>
-               </div>
-            </div>
-            <!-- NUMBERS -->
-            <div id="numbers">
-               <div class="title-box">
-                  <h2 class="title title-2">We are Proud</h2>
-                  <p class="paragraph-1">Certificate courses are instructed by highly educated and qualified instructors who hold doctoral and master’s level degrees.</p>
-               </div>
-               <div id="numbers-info">
-                  <div class="centered-70">
-                     <ul>
-                        <li>
-                           <div class="nmb title">2000</div>
-                           <div class="sub-nmb">STUDENTS</div>
-                        </li>
-                        <li>
-                           <div class="nmb title">950</div>
-                           <div class="sub-nmb">COURSES</div>
-                        </li>
-                        <li>
-                           <div class="nmb title">1600</div>
-                           <div class="sub-nmb">HOURS VIDEO</div>
-                        </li>
-                        <li>
-                           <div class="nmb title">150</div>
-                           <div class="sub-nmb">COUNTRIES REACHED</div>
-                        </li>
+                  <div id="courses-nav-bar">
+                     <ul class="clearList">
+                        <li class="active">All Categories</li>
+                        <li v-for="type in courseTypes.slice(0,6)">{{ type }}</li>
                      </ul>
                   </div>
+                  <div class="course-card__container">
+                     <div v-for="course in recentCoursesList" class="course-card">
+                        <div class="course-card__img">
+                           <img :src="'dist/images/courses/' + course.imgUrl" alt="">
+                           <div v-if="course.release" class="release" :class="course.release">
+                              {{ course.release }}
+                           </div>
+                        </div>
+                        <div class="course-card__info">
+                           <div class="course-card__top">
+                              <div class="course-type">{{ course.type }}</div>
+                              <div class="course-title">{{ course.title }}</div>
+                           </div>
 
+                           <div class="course-card__bottom">
+                              <div class="course-discount" v-if="course.discount">
+                                 {{ course. discount }}
+                              </div>
+                              <div v-if="course.stars">
+                                 <img v-for="i in course.stars" src="dist/images/stars/starfull.svg" alt="">
+                                 <img v-for="i in (5 - course.stars)" src="dist/images/stars/staremptyl.svg" alt="">{{course.stars}}
+                              </div>
+                              <div class="course-hours" v-else>
+                                 <i class="far fa-clock"></i> {{ course.hours}} hours
+                              </div>
+                              <div v-if="course.price" class="course-price">
+                                 {{course.price}}
+                              </div>
+
+                           </div>
+                        </div>
+                     </div>
+                     <!-- TRY TO FIND ANOTHER SOLUTION -->
+                     <div class="course-card placeholder" v-for="item in 6"></div>
+                  </div>
+                  <div id="btn-container">
+                     <button class="btn-rounded btn-blue">SHOW ALL</button>
+                  </div>
                </div>
-            </div>
+            </section>
+            <!-- NUMBERS -->
+            <section id="numbers">
+               <div class="title-box">
+                  <h2>We are Proud</h2>
+                  <p>Certificate courses are instructed by highly educated and qualified instructors who hold doctoral and master’s level degrees.</p>
+               </div>
+               <div id="numbers-info">
+                  <ul class="clearList centered-small">
+                     <li>
+                        <div class="nmb">2000</div>
+                        <div class="sub-nmb">STUDENTS</div>
+                     </li>
+                     <li>
+                        <div class="nmb">950</div>
+                        <div class="sub-nmb">COURSES</div>
+                     </li>
+                     <li>
+                        <div class="nmb">1600</div>
+                        <div class="sub-nmb">HOURS VIDEO</div>
+                     </li>
+                     <li>
+                        <div class="nmb">150</div>
+                        <div class="sub-nmb">COUNTRIES REACHED</div>
+                     </li>
+                  </ul>
+               </div>
+            </section>
             <!-- SUBSCRIBE -->
-            <div id="subscribe">
-               <div class="centered-70">
+            <section id="subscribe">
+               <div class="centered-small">
                   <div class="col-left">
-                     <div class="title title-4">Subscribe our newsletter</div>
-                     <p class="paragraph-1">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
+                     <h2>Subscribe our newsletter</h2>
+                     <p>There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words</p>
                   </div>
                   <div class="col-right">
-                     <div class="title">YOUR EMAIL ADDRESS</div>
+                     <h4>YOUR EMAIL ADDRESS</h4>
                      <div id="input-container" class="flex">
                         <input placeholder="Enter your E-mail">
                         <button class="btn-blue">SUBSCRIBE</button>
                      </div>
                   </div>
                </div>
-            </div>
+            </section>
             <!-- POPULAR COURSES -->
-            <div id="popular-courses">
-               <div class="title-box">
-                  <h2 class="title title-2">Popular Courses</h2>
-                  <p class="paragraph-1">Discover our most popular courses for self learning</p>
-               </div>
-               <div class="course-card__container">
-                  <div v-for="course in popularCoursesList" class="course-card">
-                     <div class="course-card__img">
-                        <img :src="'dist/images/courses/' + course.imgUrl" alt="">
-                        <div v-if="course.release" class="release" :class="course.release">
-                           {{ course.release }}
+            <section id="popular-courses">
+               <div class="centered-big">
+                  <div class="title-box">
+                     <h2>Popular Courses</h2>
+                     <p>Discover our most popular courses for self learning</p>
+                  </div>
+                  <div class="course-card__container">
+                     <div v-for="course in popularCoursesList" class="course-card">
+                        <div class="course-card__img">
+                           <img :src="'dist/images/courses/' + course.imgUrl" alt="">
+                           <div v-if="course.release" class="release" :class="course.release">
+                              {{ course.release }}
+                           </div>
                         </div>
-                     </div>
-                     <div class="course-card__info">
-                        <div class="course-card__top">
-                           <div class="course-type">{{ course.type }}</div>
-                           <div class="course-title">{{ course.title }}</div>
-                        </div>
-
-                        <div class="course-card__bottom">
-                           <div class="course-discount" v-if="course.discount">
-                              {{ course. discount }}
-                           </div>
-                           <div v-if="course.stars">
-                              <img v-for="i in course.stars" src="dist/images/stars/starfull.svg" alt="">
-                              <img v-for="i in (5 - course.stars)" src="dist/images/stars/staremptyl.svg" alt="">{{course.stars}}
-                           </div>
-                           <div class="course-hours" v-else>
-                              <i class="far fa-clock"></i> {{ course.hours}} hours
-                           </div>
-                           <div v-if="course.price" class="course-price">
-                              {{course.price}}
+                        <div class="course-card__info">
+                           <div class="course-card__top">
+                              <div class="course-type">{{ course.type }}</div>
+                              <div class="course-title">{{ course.title }}</div>
                            </div>
 
+                           <div class="course-card__bottom">
+                              <div class="course-discount" v-if="course.discount">
+                                 {{ course. discount }}
+                              </div>
+                              <div v-if="course.stars">
+                                 <img v-for="i in course.stars" src="dist/images/stars/starfull.svg" alt="">
+                                 <img v-for="i in (5 - course.stars)" src="dist/images/stars/staremptyl.svg" alt="">{{course.stars}}
+                              </div>
+                              <div class="course-hours" v-else>
+                                 <i class="far fa-clock"></i> {{ course.hours}} hours
+                              </div>
+                              <div v-if="course.price" class="course-price">
+                                 {{course.price}}
+                              </div>
+
+                           </div>
                         </div>
                      </div>
+                     <!-- TRY TO FIND ANOTHER SOLUTION -->
+                     <div class="course-card placeholder" v-for="item in 6"></div>
                   </div>
-                  <!-- TRY TO FIND ANOTHER SOLUTION -->
-                  <div class="course-card placeholder" v-for="item in 6"></div>
-               </div>
-               <div class="arrow-container">
-                  <i class="fas fa-chevron-left arrow"></i>
-                  <i class="fas fa-chevron-right arrow"></i>
-               </div>
-            </div>
-            <!-- BUSINESS -->
-            <div id="business">
-               <div class="business-card-container">
-                  <div class="business-card">
-                     <img src="dist/images/image_box_1-221x231.png" alt="">
-                     <div class="business-card__right">
-                        <h2 class="title title-4">Become an Instructor</h2>
-                        <p class="title paragraph-1">Teach what you love. Masterstudy gives you the tools to create a course.</p>
-                        <button class="btn-rounded btn-blue">START TEACHING</button>
-                     </div>
-                  </div>
-                  <div class="business-card">
-                     <img src="dist/images/image_box_2-234x231.png" alt="">
-                     <div  class="business-card__right">
-                        <h2 class="title title-4">Setup for Business</h2>
-                        <p class="title paragraph-1">Get unlimited access to 2,500 of Udemy’s top courses for your team.</p>
-                        <button class="btn-rounded btn-blue">DOING BUSINESS</button>
-                     </div>
+                  <div class="arrow-container">
+                     <i class="fas fa-chevron-left arrow"></i>
+                     <i class="fas fa-chevron-right arrow"></i>
                   </div>
                </div>
-            </div>
+            </section>
+            <!-- BUSINESS CARDS -->
+            <section id="business">
+               <div class="business-card">
+                  <img src="dist/images/image_box_1-221x231.png" alt="">
+                  <div class="business-card__right box">
+                     <h3>Become an Instructor</h3>
+                     <p>Teach what you love. Masterstudy gives you the tools to create a course.</p>
+                     <button class="btn-rounded btn-blue">START TEACHING</button>
+                  </div>
+               </div>
+               <div class="business-card box">
+                  <img src="dist/images/image_box_2-234x231.png" alt="">
+                  <div  class="business-card__right">
+                     <h3>Setup for Business</h3>
+                     <p>Get unlimited access to 2,500 of Udemy’s top courses for your team.</p>
+                     <button class="btn-rounded btn-blue">DOING BUSINESS</button>
+                  </div>
+               </div>
+            </section>
             <!-- REVIEWS -->
-            <div id="reviews">
-               <div class="centered-70">
-                  <div class="flex-container">
-                     <div class="review-info">
-                        <h3 class="title title-4">Come as you are</h3>
-                        <p class="paragraph-1 title">MasterStudy used is an excellent workshop whether you come as a counselor, advisor, administrator, or faculty member. I am going home empowered. I am looking forward to attending the On Course MasterStudy and the MasterStudy National Conference next year and facilitating the use of this excellent retention/student success course at my college.
-                        </p>
-                        <h2>Tim Sab</h2>
-                        <p class="person-info">General Developer, Stylemix Themes</p>
-                        <div class="triangle-right"></div>
+            <section>
+               <div id="reviews">
+                  <div class="centered-small">
+                     <div class="flex-container">
+                        <div class="review-info box">
+                           <h3>Come as you are</h3>
+                           <p>MasterStudy used is an excellent workshop whether you come as a counselor, advisor, administrator, or faculty member. I am going home empowered. I am looking forward to attending the On Course MasterStudy and the MasterStudy National Conference next year and facilitating the use of this excellent retention/student success course at my college.
+                           </p>
+                           <h2>Tim Sab</h2>
+                           <span>General Developer, Stylemix Themes</span>
+                           <div class="triangle-right"></div>
+                        </div>
                      </div>
                   </div>
+               </div>
+            </section>
+         </main>
+         <footer class="centered-small flex-wrap">
+            <div class="col">
+               <h3>About</h3>
+               <p>
+                  <a href="#">Masterstudy</a> is Education WordPress theme featured by Learning Management System (LMS) for online education.
+                  Developed by <a href="#">StylemixThemes.</a>
+               </p>
+               <i v-for="icon in footerIcons" :class="icon.group + ' ' + icon.prefix + icon.name"></i>
+            </div>
+            <div class="col">
+               <h3>Contact</h3>
+               <p id="address">{{contactInfo.address}}</p>
+               <p>Tel.:{{ contactInfo.phone}}</p>
+               <p id="fax">Tel.:{{ contactInfo.fax}}</p>
+               <p id="email">{{ contactInfo.email}}</p>
+            </div>
+            <div class="col">
+               <h3>Pages</h3>
+               <div class="flex">
+                  <ul class="page-list">
+                     <li v-for="page in pages.slice(0,3)">{{page}}</li>
+                  </ul>
+                  <ul class="page-list">
+                     <li v-for="page in pages.slice(3,6)">{{page}}</span></li>
+                  </ul>
                </div>
             </div>
-         </main>
-         <!-- FOOTER -->
-         <footer>
-            <div class="centered-70 footer-info">
-               <div class="col">
-                  <h3 class="title">About</h3>
-                  <p>
-                     <a href="#">Masterstudy</a> is Education WordPress theme featured by Learning Management System (LMS) for online education.
-                     Developed by <a href="#">StylemixThemes.</a>
-                  </p>
-                  <div class="icons">
-                     <i class="fab fa-facebook"></i>
-                     <i class="fab fa-twitter"></i>
-                     <i class="fab fa-instagram"></i>
-                  </div>
-               </div>
-               <div class="col">
-                  <h3 class="title">Contact</h3>
-                  <p id="address">USA, Callifornia 20, First Avenue, Callifornia</p>
-                  <p>+1 212 458 300 32</p>
-                  <p>+1 212 375 24 14</p>
-                  <p id="email">info@masterstudy.com</p>
-
-               </div>
-               <div class="col">
-                  <h3 class="title">Pages</h3>
-                  <div class="flex">
-                     <ul class="page-list">
-                        <li>Blog</li>
-                        <li>Home</li>
-                        <li>Shortcodes</li>
-                     </ul>
-                     <ul class="page-list">
-                        <li>Courses</li>
-                        <li>Memberships</li>
-                        <li>Typography</li>
-                     </ul>
-                  </div>
-               </div>
-               <div class="col">
-                  <h3 class="title">Blog</h3>
-                  <div class="blog-row">
-                     <img src="dist/images/photo-1517520287167-4bbf64a00d66-75x75.jpeg" alt="">
-                     <div class="blog-info">
-                        <h5>Our main target is to "Developing Yourself as a Leader"</h5>
-                        <p>-- August 9, 2018</p>
-                     </div>
-                  </div>
-                  <div class="blog-row">
-                     <img src="dist/images/photo-1490376840453-5f616fbebe5b-75x75.jpeg" alt="">
-                     <div class="blog-info">
-                        <h5>Those Other College Expenses You Aren't Yhinking About</h5>
-                        <p>-- June 3, 2015</p>
-                     </div>
+            <div class="col">
+               <h3>Blog</h3>
+               <div v-for="blog in blogs" class="blog-row flex">
+                  <img :src="'dist/images/' + blog.imgPath" alt="">
+                  <div class="blog-info">
+                     <h5>{{blog.title}}</h5>
+                     <p>{{blog.date}}</p>
                   </div>
                </div>
             </div>
          </footer>
-
       </div>
    </body>
-   <script src="app.js" charset="utf-8"></script>
+   <script type="application/javascript" src="app.js" charset="utf-8"></script>
 </html>

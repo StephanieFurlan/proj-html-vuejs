@@ -1,10 +1,46 @@
 
-
 var app = new Vue({
    el: "#app",
    data: {
       languages: ["English", "Italian", "Deutsch"],
-      linkList: [
+      headerIcons: [
+         {
+            name: "twitter",
+            group: "fab",
+            prefix: "fa-",
+         },
+         {
+            name: "instagram",
+            group: "fab",
+            prefix: "fa-",
+         },
+         {
+            name: "behance",
+            group: "fab",
+            prefix: "fa-",
+         },
+         {
+            name: "basketball-ball",
+            group: "fas",
+            prefix: "fa-",
+         },
+         {
+            name: "flickr",
+            group: "fab",
+            prefix: "fa-",
+         },
+         {
+            name: "linkedin",
+            group: "fab",
+            prefix: "fa-",
+         },
+         {
+            name: "pinterest",
+            group: "fab",
+            prefix: "fa-",
+         },
+      ],
+      headerLinkList: [
          {
             link: "Courses",
             new: false
@@ -236,6 +272,43 @@ var app = new Vue({
             faetured: false,
             release: false
          }
+      ],
+      contactInfo: {
+         address: "USA, Callifornia 20, First Avenue, Callifornia",
+         phone: "+1 212 458 300 32",
+         fax: "+1 212 375 24 14",
+         email: "info@masterstudy.com"
+      },
+      pages: ["Blog", "Home", "Shortcodes", "Courses", "Memberships", "Typography"],
+      blogs: [
+         {
+            title: "Our main target is to 'Developing Yourself as a Leader'",
+            date: "-- August 9, 2018",
+            imgPath: "photo-1517520287167-4bbf64a00d66-75x75.jpeg"
+         },
+         {
+            title: "Those Other College Expenses You Aren't Yhinking About",
+            date: "-- June 3, 2015",
+            imgPath: "photo-1490376840453-5f616fbebe5b-75x75.jpeg"
+         }
+      ],
+      footerIcons: [
+         {
+            name: "twitter",
+            group: "fab",
+            prefix: "fa-",
+         },
+         {
+            name: "instagram",
+            group: "fab",
+            prefix: "fa-",
+         },
+         {
+            name: "facebook",
+            group: "fab",
+            prefix: "fa-",
+         }
+
       ]
    },
    mounted() {

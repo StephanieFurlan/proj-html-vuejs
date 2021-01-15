@@ -1,0 +1,45 @@
+
+// two jumbotrons - investing and online-course
+.jumbotron {
+   height: 600px;
+   display: flex;
+   align-items: center;
+   .jumbotron-text {
+      width: 60%;
+      max-width: 700px;
+      h1 {
+         font-size: 64px;
+      }
+      h2 {
+         font-size: 50px;
+      }
+      h3 {
+         font-size: 24px;
+         font-weight: $fontWeightS;
+      }
+      h1, h2 {
+         font-weight: $fontWeightXS;
+      }
+      h1, h2, h3 {
+         padding-bottom: $borderL;
+      }
+   }
+}
+
+#investing {
+   position: relative;
+   img {
+      position: absolute;
+      right: 10%;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: -100;
+   }
+}
+
+#online-course {
+   background-image: url("../dist/images/online-course.png");
+   background-repeat: no-repeat;
+   background-position: center;
+   background-color: $cardColor;
+}
